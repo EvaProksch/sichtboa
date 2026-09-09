@@ -1,0 +1,61 @@
+# robots.txt – sichtboa in KI
+# https://sichtboa-in-ki.at
+
+# Klassische Suchmaschinen
+User-agent: Googlebot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+# KI-Systeme, die Inhalte für Antworten lesen dürfen
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Alle übrigen
+User-agent: *
+Allow: /
+
+Sitemap: https://sichtboa-in-ki.at/sitemap.xml
