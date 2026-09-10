@@ -1692,9 +1692,69 @@ h3 {
   border-color: rgba(23, 24, 26, 0.14);
 }
 
+
+.breadcrumb {
+  margin-bottom: 1.6rem;
+  color: rgba(254, 252, 250, 0.55);
+  font-family: "Libre Franklin", "Open Sans", Arial, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb li + li::before {
+  margin-right: 0.5rem;
+  content: "/";
+  opacity: 0.5;
+}
+
+.breadcrumb a {
+  color: var(--lime);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb [aria-current] {
+  color: rgba(254, 252, 250, 0.8);
+}
+
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "url": "https://sichtboa-in-ki.at/impressum.html",
+      "name": "Impressum",
+      "inLanguage": "de-AT",
+      "dateModified": "2026-09-10",
+      "isPartOf": { "@type": "WebSite", "name": "sichtboa in KI", "url": "https://sichtboa-in-ki.at/" },
+      "publisher": { "@id": "https://sichtboa-in-ki.at/#organization" },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://sichtboa-in-ki.at/" },
+          { "@type": "ListItem", "position": 2, "name": "Impressum", "item": "https://sichtboa-in-ki.at/impressum.html" }
+        ]
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
-<main><header class="site-header"><a class="logo-link" href="index.html#top" aria-label="sichtboa in KI – Startseite"><span class="brand-logo brand-logo--compact"><span class="brand-logo__word">sichtboa<span class="brand-logo__dot" aria-hidden="true"></span></span><span class="brand-logo__sub">IN KI</span></span></a><nav class="main-nav" aria-label="Hauptnavigation"><a href="index.html#warum">Warum jetzt</a><a href="index.html#analyse">Analyse</a><a href="index.html#team">Über uns</a><a href="index.html#faq">FAQ</a></nav><a class="header-cta" href="mailto:office@easy-ads.at?cc=eva@klar-werk.at&amp;subject=Kostenloses%20Erstgespr%C3%A4ch%20%E2%80%93%20sichtboa%20in%20KI">Erstgespräch<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"></path></svg></a></header><section class="legal-page" id="top"><div class="container"><a class="legal-back" href="index.html"><svg viewBox="0 0 20 20" aria-hidden="true" style="width:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M16 10H5M9 6l-4 4 4 4"></path></svg>Zurück zur Startseite</a><div class="legal-page__head"><h1>Impressum</h1><p>Angaben zu den Verantwortlichen hinter sichtboa in KI.</p></div><div class="legal-content"><p class="legal-lead">Informationen gemäß § 5 E-Commerce-Gesetz, § 14 Unternehmensgesetzbuch und § 25 Mediengesetz.</p><div class="legal-columns"><section><h3>Mag. Daniela Weger · easyAds</h3><p>Welserstraße 43<br/>4501 Neuhofen an der Krems<br/>Österreich</p><p>Telefon: <a href="tel:+436602886855">+43 660 288 68 55</a><br/>E-Mail: <a href="mailto:office@easy-ads.at">office@easy-ads.at</a><br/>Web: <a href="https://easy-ads.at/" target="_blank" rel="noreferrer">easy-ads.at</a></p><p>UID: ATU75135006<br/>Unternehmensgegenstand: Werbeagentur<br/>Aufsichtsbehörde: Bezirkshauptmannschaft Linz-Land<br/>Mitglied der WKO Oberösterreich, Sparte Information &amp; Consulting, Fachgruppe Werbung und Marktkommunikation</p></section><section><h3>Mag. Eva Proksch · klar.werk</h3><p>Im Niederfeld 14<br/>4062 Kirchberg-Thening<br/>Österreich</p><p>E-Mail: <a href="mailto:eva@klar-werk.at">eva@klar-werk.at</a><br/>Web: <a href="https://klar-werk.at/" target="_blank" rel="noreferrer">klar-werk.at</a></p><p>Unternehmensgegenstand: Werbeagentur<br/>Aufsichtsbehörde: Bezirkshauptmannschaft Linz-Land<br/>Mitglied der WKO Oberösterreich, Sparte Information &amp; Consulting, Fachgruppe Werbung und Marktkommunikation</p></section></div><section><h3>Weitere rechtliche Angaben</h3><p>Anwendbare Rechtsvorschriften: Gewerbeordnung, abrufbar unter <a href="https://www.ris.bka.gv.at" target="_blank" rel="noreferrer">ris.bka.gv.at</a>. Inhaltlich verantwortlich: Mag. Daniela Weger und Mag. Eva Proksch.</p><p>Wir sind nicht bereit und nicht verpflichtet, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p></section><section><h3>Haftung und Urheberrecht</h3><p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann dennoch keine Gewähr übernommen werden. Für Inhalte verlinkter externer Seiten sind ausschließlich deren Betreiber verantwortlich.</p><p>Texte, Gestaltung und Logo dieser Website sind urheberrechtlich geschützt. Jede Verwendung außerhalb der gesetzlichen Grenzen bedarf der vorherigen Zustimmung der Rechteinhaberinnen.</p></section></div></div></section></main><footer class="site-footer"><div class="container site-footer__top"><div><span class="brand-logo brand-logo--compact"><span class="brand-logo__word">sichtboa<span class="brand-logo__dot" aria-hidden="true"></span></span><span class="brand-logo__sub">IN KI</span></span><p>Sichtbarkeit für Menschen. Optimiert für KI.</p></div><div class="site-footer__links"><a href="mailto:office@easy-ads.at">office@easy-ads.at</a><a href="mailto:eva@klar-werk.at">eva@klar-werk.at</a><a href="index.html#warum">Warum jetzt</a><a href="index.html#analyse">Leistungen</a><a href="index.html#team">Über uns</a></div></div><div class="container site-footer__bottom"><span>© 2026 sichtboa in KI</span><div><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div></footer>
+<main><header class="site-header"><a class="logo-link" href="index.html#top" aria-label="sichtboa in KI – Startseite"><span class="brand-logo brand-logo--compact"><span class="brand-logo__word">sichtboa<span class="brand-logo__dot" aria-hidden="true"></span></span><span class="brand-logo__sub">IN KI</span></span></a><nav class="main-nav" aria-label="Hauptnavigation"><a href="index.html#warum">Warum jetzt</a><a href="index.html#analyse">Analyse</a><a href="index.html#team">Über uns</a><a href="index.html#faq">FAQ</a></nav><a class="header-cta" href="mailto:office@easy-ads.at?cc=eva@klar-werk.at&amp;subject=Kostenloses%20Erstgespr%C3%A4ch%20%E2%80%93%20sichtboa%20in%20KI">Erstgespräch<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4"></path></svg></a></header><section class="legal-page" id="top"><div class="container"><a class="legal-back" href="index.html"><svg viewBox="0 0 20 20" aria-hidden="true" style="width:1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M16 10H5M9 6l-4 4 4 4"></path></svg>Zurück zur Startseite</a><nav class="breadcrumb" aria-label="breadcrumb"><ol><li><a href="index.html">Startseite</a></li><li><span aria-current="page">Impressum</span></li></ol></nav><div class="legal-page__head"><h1>Impressum</h1><p>Angaben zu den Verantwortlichen hinter sichtboa in KI.</p></div><div class="legal-content"><p class="legal-lead">Informationen gemäß § 5 E-Commerce-Gesetz, § 14 Unternehmensgesetzbuch und § 25 Mediengesetz.</p><div class="legal-columns"><section><h3>Mag. Daniela Weger · easyAds</h3><p>Welserstraße 43<br/>4501 Neuhofen an der Krems<br/>Österreich</p><p>Telefon: <a href="tel:+436602886855">+43 660 288 68 55</a><br/>E-Mail: <a href="mailto:office@easy-ads.at">office@easy-ads.at</a><br/>Web: <a href="https://easy-ads.at/" target="_blank" rel="noreferrer">easy-ads.at</a></p><p>UID: ATU75135006<br/>Unternehmensgegenstand: Werbeagentur<br/>Aufsichtsbehörde: Bezirkshauptmannschaft Linz-Land<br/>Mitglied der WKO Oberösterreich, Sparte Information &amp; Consulting, Fachgruppe Werbung und Marktkommunikation</p></section><section><h3>Mag. Eva Proksch · klar.werk</h3><p>Im Niederfeld 14<br/>4062 Kirchberg-Thening<br/>Österreich</p><p>E-Mail: <a href="mailto:eva@klar-werk.at">eva@klar-werk.at</a><br/>Web: <a href="https://klar-werk.at/" target="_blank" rel="noreferrer">klar-werk.at</a></p><p>Unternehmensgegenstand: Werbeagentur<br/>Aufsichtsbehörde: Bezirkshauptmannschaft Linz-Land<br/>Mitglied der WKO Oberösterreich, Sparte Information &amp; Consulting, Fachgruppe Werbung und Marktkommunikation</p></section></div><section><h3>Weitere rechtliche Angaben</h3><p>Anwendbare Rechtsvorschriften: Gewerbeordnung, abrufbar unter <a href="https://www.ris.bka.gv.at" target="_blank" rel="noreferrer">ris.bka.gv.at</a>. Inhaltlich verantwortlich: Mag. Daniela Weger und Mag. Eva Proksch.</p><p>Wir sind nicht bereit und nicht verpflichtet, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p></section><section><h3>Haftung und Urheberrecht</h3><p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann dennoch keine Gewähr übernommen werden. Für Inhalte verlinkter externer Seiten sind ausschließlich deren Betreiber verantwortlich.</p><p>Texte, Gestaltung und Logo dieser Website sind urheberrechtlich geschützt. Jede Verwendung außerhalb der gesetzlichen Grenzen bedarf der vorherigen Zustimmung der Rechteinhaberinnen.</p></section></div></div></section></main><footer class="site-footer"><div class="container site-footer__top"><div><span class="brand-logo brand-logo--compact"><span class="brand-logo__word">sichtboa<span class="brand-logo__dot" aria-hidden="true"></span></span><span class="brand-logo__sub">IN KI</span></span><p>Sichtbarkeit für Menschen. Optimiert für KI.</p></div><div class="site-footer__links"><a href="tel:+4368120150304">+43 681 201 503 04</a><a href="mailto:office@easy-ads.at">office@easy-ads.at</a><a href="mailto:eva@klar-werk.at">eva@klar-werk.at</a><a href="index.html#warum">Warum jetzt</a><a href="index.html#analyse">Leistungen</a><a href="index.html#team">Über uns</a></div></div><div class="container site-footer__bottom"><span>© 2026 sichtboa in KI</span><div><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div></footer>
 </body>
 </html>
