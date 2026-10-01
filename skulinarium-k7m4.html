@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Suchanfragen auswählen · SKULINARIUM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black:#17181a; --black-2:#24262a; --lime:#dce883; --lime-d:#b9c85a; --blau:#1da1c2; --off:#fefcfa;
+    --g100:#f0eee9; --g200:#e2ded4; --g400:#8f8f86; --g600:#56574f;
+    --ok:#1a8f5a; --ok-bg:#e7f6ee; --teils:#9a6608; --teils-bg:#fdf1de; --fehlt:#c23b3b; --fehlt-bg:#fbe9e9;
+    --r:14px; --shadow:0 1px 3px rgba(23,24,26,.08),0 6px 24px rgba(23,24,26,.05);
+    --F:'Libre Franklin',system-ui,sans-serif; --W:'Work Sans',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--off);color:var(--black);font:15.5px/1.6 var(--W)}
+  h1,h2,h3,h4,h5{font-family:var(--F);letter-spacing:-.01em;line-height:1.2}
+  .wrap{max-width:900px;margin:0 auto;padding:0 18px}
+  a{color:var(--blau)}
+  /* Cover */
+  .cover{background:linear-gradient(160deg,var(--black),var(--black-2));color:#fff;border-bottom:3px solid var(--lime);padding:34px 0 46px}
+  .brandrow{display:flex;align-items:center;gap:10px;margin-bottom:54px}
+  .brandrow svg{width:36px;height:36px}
+  .brandrow .corner{stroke:var(--lime);stroke-width:6;fill:none;stroke-linecap:round}
+  .brand{font:800 17px/1.05 var(--F)}
+  .brand small{display:block;font:600 10px var(--W);letter-spacing:.14em;color:var(--lime);margin-top:2px}
+  .eyebrow{color:var(--lime);font-weight:600;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;margin:0 0 10px}
+  .cover h1{font-size:42px;margin:0 0 10px;font-weight:800}
+  .cover .sub{color:rgba(254,252,250,.75);font-size:18px;margin:0}
+  .meta-row{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:30px;font-size:13.5px;color:rgba(254,252,250,.6)}
+  .meta-row b{color:#fff;font-weight:600;display:block;font-size:14.5px}
+  .draft{display:inline-block;margin-top:24px;background:rgba(220,232,131,.14);border:1px solid rgba(220,232,131,.4);color:var(--lime);border-radius:8px;padding:6px 12px;font-size:13px}
+  /* Sections */
+  section{padding:10px 0}
+  .part{display:flex;align-items:baseline;gap:12px;margin:46px 0 6px}
+  .part .n{display:inline-grid;place-items:center;min-width:34px;height:34px;border-radius:50%;background:var(--black);color:var(--lime);font:800 15px var(--F)}
+  .part h2{font-size:28px;margin:0}
+  .lead{color:var(--g600);font-size:16.5px;margin:4px 0 20px;max-width:720px}
+  h3{font-size:19px;margin:28px 0 10px}
+  .card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:22px 24px;margin-bottom:16px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .kpi{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:18px 20px}
+  .kpi b{display:block;font:800 34px/1.05 var(--F)}
+  .kpi span{color:var(--g600);font-size:14px}
+  .dark{background:var(--black);color:#fff;border-radius:var(--r);padding:24px 26px;margin-bottom:16px}
+  .dark h3,.dark h4{color:var(--lime);margin-top:0}
+  .dark p{color:rgba(254,252,250,.86)}
+  .quote{border-left:4px solid var(--lime);padding:4px 0 4px 18px;font-size:17px;margin:10px 0}
+  ul.clean{padding-left:20px;margin:8px 0}
+  ul.clean li{margin:5px 0}
+  table{width:100%;border-collapse:collapse;font-size:14.5px}
+  th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--g100);vertical-align:top}
+  th{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--g400);font-weight:600}
+  .num{text-align:center;font:700 15px var(--F)}
+  .pill{display:inline-block;border-radius:99px;padding:2px 10px;font-size:12.5px;font-weight:600;white-space:nowrap}
+  .p-rot{background:var(--fehlt-bg);color:var(--fehlt)} .p-gelb{background:var(--teils-bg);color:var(--teils)} .p-gruen{background:var(--ok-bg);color:var(--ok)} .p-grau{background:var(--g100);color:var(--g600)} .p-blau{background:#e3f4f8;color:#137a93}
+  .hint{background:#eef8fb;border-left:4px solid var(--blau);border-radius:0 10px 10px 0;padding:12px 16px;font-size:14.5px;margin:14px 0}
+  .warn{background:var(--teils-bg);border-left:4px solid #e3a72f;border-radius:0 10px 10px 0;padding:12px 16px;font-size:14.5px;margin:14px 0}
+  /* Maßnahmen */
+  .phase{display:flex;align-items:center;gap:12px;margin:34px 0 12px}
+  .phase h3{margin:0;font-size:21px}
+  .phase .tag{background:var(--lime);color:var(--black);font:700 12px var(--W);letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:4px 10px}
+  .m{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);margin-bottom:14px;overflow:hidden;break-inside:avoid;border-left:5px solid var(--blau)}
+  .m.hoch{border-left-color:var(--fehlt)}
+  .m-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:18px 22px 6px}
+  .m-head h4{margin:0;font-size:18px}
+  .m-head .id{color:var(--g400);font:700 13px var(--F);margin-right:6px}
+  .m-body{padding:4px 22px 18px}
+  .m-body p{margin:6px 0}
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--g100);background:#fcfbf8}
+  .facts div{padding:10px 14px;border-right:1px solid var(--g100);font-size:13.5px}
+  .facts div:last-child{border-right:0}
+  .facts b{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--g400);margin-bottom:1px}
+  .vn{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 4px}
+  .vn div{border-radius:10px;padding:10px 12px;font-size:14px}
+  .vn .v{background:var(--fehlt-bg)} .vn .n{background:var(--ok-bg)}
+  .vn b{display:block;font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;margin-bottom:2px}
+  .vn .v b{color:var(--fehlt)} .vn .n b{color:var(--ok)}
+  .check{display:inline-block;width:16px;height:16px;border:2px solid var(--g400);border-radius:4px;vertical-align:-3px;margin-right:6px}
+  /* Anhang */
+  pre{background:var(--black);color:#e8ecd0;border-radius:12px;padding:16px 18px;font:12.5px/1.5 ui-monospace,Menlo,Consolas,monospace;overflow-x:auto;white-space:pre-wrap;word-break:break-word}
+  .faq{border-bottom:1px solid var(--g100);padding:12px 0}
+  .faq:last-child{border-bottom:0}
+  .faq b{display:block;font-family:var(--F);font-size:16px;margin-bottom:3px}
+  .matrix{table-layout:fixed;font-size:12.5px}
+  .matrix th,.matrix td{padding:7px 4px;hyphens:auto;overflow-wrap:anywhere}
+  .matrix th{font-size:10px;letter-spacing:.03em}
+  .matrix td.num{font:600 12.5px var(--W);overflow-wrap:normal}
+  .matrix th:first-child,.matrix td:first-child{width:24%}
+  .chars{color:var(--g400);font-size:12.5px;white-space:nowrap}
+  .foot{color:var(--g400);font-size:13px;margin:40px 0 60px;border-top:1px solid var(--g200);padding-top:16px}
+  @media (max-width:700px){
+    .grid2,.grid3,.vn{grid-template-columns:1fr}
+    .facts{grid-template-columns:1fr 1fr}
+    .facts div:nth-child(2){border-right:0}
+    .cover h1{font-size:32px}
+    table{font-size:13px}
+    .card{overflow-x:auto}
+    table.card{display:block}
+    th,td{padding:7px 5px;overflow-wrap:anywhere}
+    .facts div{border-bottom:1px solid var(--g100)}
+  }
+  @media print{
+    body{background:#fff;font-size:13.5px}
+    .card,.m,.kpi{box-shadow:none;border:1px solid var(--g200)}
+    .m{border-left-width:5px}
+    .cover,.dark,pre,.part .n,.phase .tag,.pill,.vn div,.hint,.warn,.facts{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .pagebreak{break-before:page}
+    .grid3 .card,.grid2 .card,.kpi{break-inside:avoid}
+    h3,h4,.phase,.part{break-after:avoid}
+    table tr{break-inside:avoid}
+    @page{margin:12mm}
+  }
+  .sa td{vertical-align:top;padding:7px 8px}
+  .sa .kf{font:700 15px var(--F);display:block}
+  .sa .lf{color:var(--g600);font-size:13.5px;display:block;margin-top:2px}
+  .sa .why{font-size:13.5px}
+  .box{display:inline-block;width:15px;height:15px;border:2px solid var(--g400);border-radius:4px;vertical-align:-3px;margin-right:9px}
+  .pass{white-space:nowrap}
+  .grp{background:var(--black);color:var(--lime);font:700 12px var(--W);letter-spacing:.08em;text-transform:uppercase}
+  .grp td{padding:8px 10px}
+  .ziel{display:inline-block;background:var(--lime);color:var(--black);border-radius:6px;font:700 10.5px var(--W);padding:1px 6px;margin-left:6px;vertical-align:2px;letter-spacing:.04em}
+  .notes{border-bottom:1px solid var(--g200);height:26px}
+  table.int{font-size:12.5px}
+  table.int td,table.int th{padding:6px 5px}
+  .pick{display:flex;align-items:center;gap:7px;cursor:pointer;font-size:12.5px;line-height:1.25;white-space:normal}
+  .pick input{width:20px;height:20px;accent-color:#1d1d1b;flex:none;cursor:pointer;margin:0}
+  .pick input:disabled+span{color:var(--g400)}
+  tr.on td{background:#f4f8d9}
+  .counter{position:sticky;top:0;z-index:5;background:var(--black);color:var(--lime);font:700 14px var(--W);text-align:center;padding:9px 12px}
+  .counter.full{background:var(--lime);color:var(--black)}
+  textarea,input[type=text]{width:100%;box-sizing:border-box;font:15px var(--F);padding:9px 10px;border:1.5px solid var(--g400);border-radius:8px}
+  .send{border:2px solid var(--black)}
+  .btns{display:flex;flex-wrap:wrap;gap:8px}
+  .btns button{font:700 14px var(--W);padding:11px 16px;border-radius:10px;border:2px solid var(--black);background:var(--black);color:var(--lime);cursor:pointer}
+  .btns button.sec{background:#fff;color:var(--black)}
+  @media print{.counter,.send,.btns{display:none!important}}
+  @media (max-width:700px){
+    table.sel,table.sel tbody{display:block}
+    table.sel tr{display:grid;grid-template-columns:26px 1fr;column-gap:8px;padding:10px 0;border-bottom:1px solid var(--g200)}
+    table.sel tr:first-child{display:none}
+    table.sel td{display:block;padding:1px 0!important;border:0!important;width:auto!important}
+    table.sel td.why,table.sel td.pass{grid-column:2}
+    table.sel td.why{margin-top:5px}
+    table.sel td.pass{margin-top:8px}
+    table.sel tr.grp{display:block;padding:0}
+    table.sel tr.grp td{padding:8px 10px!important}
+  }
+</style>
+<body>
+<header class="cover" style="padding:26px 0 30px">
+  <div class="wrap">
+    <div class="brandrow" style="margin-bottom:26px">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><path class="corner" d="M12,32 L12,12 L32,12"/><path class="corner" d="M68,12 L88,12 L88,32"/><path class="corner" d="M88,68 L88,88 L68,88"/><path class="corner" d="M32,88 L12,88 L12,68"/><circle cx="72" cy="28" r="4.5" fill="#dce883"/></svg>
+      <div class="brand">sichtboa<small>IN KI</small></div>
+    </div>
+    <p class="eyebrow">Suchanfragen für die KI-Messung</p>
+    <h1 style="font-size:36px">SKULINARIUM</h1>
+    <p class="sub">Vorschläge, mit denen wir prüfen, ob du von KI genannt wirst.</p>
+    <div class="meta-row"><div><b>12 auswählen</b>Status</div><div><b>30. September 2026</b>Stand</div></div>
+  </div>
+</header>
+<div class="counter" aria-live="polite"><span id="cnt">0</span> von 12 ausgewählt</div>
+<main class="wrap">
+<section>
+  <h3>So gehst du die Liste durch</h3>
+  <div class="card">
+    <ul class="clean" style="margin:0">
+      <li>Die Vorschläge beruhen auf echten Google-Suchen in Österreich, auf Fragen deiner Kund:innen und auf deinem Ziel. Mit <span class="ziel" style="margin-left:0">ZIEL</span> markierte Fragen werden kaum gesucht, bringen dich aber zu deinen Wunschkunden.</li>
+      <li>Kreuze bitte die <b>12 Fragen</b> an, die dir am wichtigsten sind. Du kannst dabei auch aus den weiteren Ideen wählen. Wenn du fertig bist, schick uns deine Auswahl mit dem Button ganz unten.</li>
+    </ul>
+  </div>
+  <div class="card" style="padding:8px 14px"><table class="sa sel"><tr><th style="width:34px">#</th><th>Suchanfrage</th><th style="width:34%">Warum diese Frage</th><th style="width:118px;font-size:9.5px;letter-spacing:.02em">ja, bitte aufnehmen</th></tr><tr class="grp"><td colspan="4">A · Catering in deiner Region</td></tr><tr><td class="num">1</td><td><span class="kf">Catering Oberösterreich</span><span class="lf">„Welche Caterer gibt es in Oberösterreich?“</span></td><td class="why">„Catering“ ist mit 2.700 Suchen im Monat der meistgesuchte Begriff. Hier verbunden mit deiner Region.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="1" data-kurz="Catering Oberösterreich"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">2</td><td><span class="kf">beste Caterer Oberösterreich</span><span class="lf">„Welche sind die besten Caterer in Oberösterreich?“</span></td><td class="why">Hier soll die KI Anbieter auswählen und empfehlen.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="2" data-kurz="beste Caterer Oberösterreich"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">3</td><td><span class="kf">Catering Linz empfehlenswert</span><span class="lf">„Welcher Caterer in Linz ist empfehlenswert?“</span></td><td class="why">Linz ist die meistgesuchte Stadt: 460 Suchen im Monat.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="3" data-kurz="Catering Linz empfehlenswert"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">4</td><td><span class="kf">Catering Wels empfehlenswert</span><span class="lf">„Welcher Caterer in Wels ist empfehlenswert?“</span></td><td class="why">Deine Heimatregion: 190 Suchen im Monat.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="4" data-kurz="Catering Wels empfehlenswert"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">5</td><td><span class="kf">Catering Wels Preise</span><span class="lf">„Was kostet ein Caterer in Wels?“</span></td><td class="why">Preisfragen kommen kurz vor der Anfrage.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="5" data-kurz="Catering Wels Preise"><span>ja, bitte aufnehmen</span></label></td></tr><tr class="grp"><td colspan="4">B · Eventcatering &amp; Formate</td></tr><tr><td class="num">6</td><td><span class="kf">Eventcatering Oberösterreich</span><span class="lf">„Welche Eventcaterer gibt es in Oberösterreich?“</span></td><td class="why">So suchen Firmen und Eventagenturen: 110 Suchen im Monat.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="6" data-kurz="Eventcatering Oberösterreich"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">7</td><td><span class="kf">Flying Buffet Oberösterreich</span><span class="lf">„Wer bietet Flying Buffet in Oberösterreich an?“</span></td><td class="why">Flying Buffet ist das meistgesuchte Format: 250 Suchen im Monat.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="7" data-kurz="Flying Buffet Oberösterreich"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">8</td><td><span class="kf">Grill Catering Firmenfeier</span><span class="lf">„Welcher Caterer macht Grill-Catering für eine Firmenfeier?“</span></td><td class="why">Grill-Catering wird 100-mal im Monat gesucht, hier für Firmen-Sommerfeste und Incentives.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="8" data-kurz="Grill Catering Firmenfeier"><span>ja, bitte aufnehmen</span></label></td></tr><tr class="grp"><td colspan="4">C · Firmen &amp; Saison</td></tr><tr><td class="num">9</td><td><span class="kf">Weihnachtsfeier Catering Firma</span><span class="lf">„Welcher Caterer macht die Weihnachtsfeier für eine Firma?“</span></td><td class="why">Im Schnitt 50 Suchen, im Dezember bis zu 320: deine stärkste Saison.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="9" data-kurz="Weihnachtsfeier Catering Firma"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">10</td><td><span class="kf">Catering 200 Personen Oberösterreich<span class="ziel">ZIEL</span></span><span class="lf">„Welcher Caterer macht Catering für 200 Personen in Oberösterreich?“</span></td><td class="why">Genau dein Kernbereich (100 bis 500 Gäste). Kaum gesucht, aber große Aufträge.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="10" data-kurz="Catering 200 Personen Oberösterreich"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">11</td><td><span class="kf">Full-Service Catering Firmenevent<span class="ziel">ZIEL</span></span><span class="lf">„Welcher Caterer bietet Full-Service für Firmenevents?“</span></td><td class="why">Planung, Essen, Getränke und Personal aus einer Hand: Das unterscheidet dich.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="11" data-kurz="Full-Service Catering Firmenevent"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">12</td><td><span class="kf">Neujahrsempfang Catering<span class="ziel">ZIEL</span></span><span class="lf">„Welcher Caterer macht einen Neujahrsempfang?“</span></td><td class="why">Für mehr Aufträge von Jänner bis März. [Suchvolumen prüfen]</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="12" data-kurz="Neujahrsempfang Catering"><span>ja, bitte aufnehmen</span></label></td></tr><tr class="grp"><td colspan="4">D · Hochzeit</td></tr><tr><td class="num">13</td><td><span class="kf">Hochzeitscatering Oberösterreich</span><span class="lf">„Welche Hochzeitscaterer gibt es in Oberösterreich?“</span></td><td class="why">Die Grundfrage der Brautpaare in deiner Region.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="13" data-kurz="Hochzeitscatering Oberösterreich"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">14</td><td><span class="kf">Hochzeitscaterer Oberösterreich empfehlenswert</span><span class="lf">„Welcher Hochzeitscaterer in Oberösterreich ist empfehlenswert?“</span></td><td class="why">Läuft schon in der Messung. Dort nennt ChatGPT dich heute auf Platz 1.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="14" data-kurz="Hochzeitscaterer Oberösterreich empfehlenswert"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">15</td><td><span class="kf">Hochzeitsmenü Preise</span><span class="lf">„Was kostet ein Hochzeitsmenü?“</span></td><td class="why">„Hochzeitsmenü“ wird 100-mal im Monat gesucht, vor allem von Jänner bis März.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="15" data-kurz="Hochzeitsmenü Preise"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">16</td><td><span class="kf">Hochzeitsbuffet Preis pro Person</span><span class="lf">„Was kostet ein Hochzeitsbuffet pro Person?“</span></td><td class="why">Die Preisfrage kurz vor der Buchung: 30 Suchen im Monat.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="16" data-kurz="Hochzeitsbuffet Preis pro Person"><span>ja, bitte aufnehmen</span></label></td></tr><tr class="grp"><td colspan="4">E · Deine Stärke</td></tr><tr><td class="num">17</td><td><span class="kf">nachhaltiges Catering Oberösterreich<span class="ziel">ZIEL</span></span><span class="lf">„Welcher Caterer in Oberösterreich bietet nachhaltiges Catering?“</span></td><td class="why">Klimaneutral seit 2024: eine Stärke, die kaum ein Mitbewerber zeigt.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="17" data-kurz="nachhaltiges Catering Oberösterreich"><span>ja, bitte aufnehmen</span></label></td></tr><tr class="grp"><td colspan="4">F · Dein Name</td></tr><tr><td class="num">18</td><td><span class="kf">SKULINARIUM Catering</span><span class="lf">„Was ist SKULINARIUM?“</span></td><td class="why">Prüft, ob die KI dich richtig beschreibt.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="18" data-kurz="SKULINARIUM Catering"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">19</td><td><span class="kf">SKULINARIUM Erfahrungen</span><span class="lf">„Welche Erfahrungen gibt es mit SKULINARIUM?“</span></td><td class="why">Zeigt, was die KI über deinen Ruf weiß.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="19" data-kurz="SKULINARIUM Erfahrungen"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">20</td><td><span class="kf">SKULINARIUM Preise</span><span class="lf">„Was kostet Catering bei SKULINARIUM?“</span></td><td class="why">Prüft, ob die KI deine Preise kennt oder rät.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="20" data-kurz="SKULINARIUM Preise"><span>ja, bitte aufnehmen</span></label></td></tr></table></div>
+
+  <h3>Weitere Ideen</h3>
+  <p style="margin-top:0;color:var(--g600);font-size:14px">Auch diese Fragen kannst du ankreuzen. Insgesamt wählst du 12.</p>
+  <div class="card" style="padding:8px 14px"><table class="sa sel"><tr><th style="width:34px">#</th><th>Suchanfrage</th><th style="width:34%">Warum diese Frage</th><th style="width:118px;font-size:9.5px;letter-spacing:.02em">ja, bitte aufnehmen</th></tr><tr><td class="num">21</td><td><span class="kf">Seminarcatering Linz</span><span class="lf">„Wer macht Seminarcatering in Linz?“</span></td><td class="why">Seminare und Klausuren finden oft im Winter statt.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="21" data-kurz="Seminarcatering Linz"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">22</td><td><span class="kf">Messecatering Wels</span><span class="lf">„Wer macht Messecatering in Wels?“</span></td><td class="why">Die Messe Wels liegt vor deiner Tür.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="22" data-kurz="Messecatering Wels"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">23</td><td><span class="kf">Live Cooking Catering Oberösterreich</span><span class="lf">„Wer bietet Live-Cooking-Catering in Oberösterreich?“</span></td><td class="why">Ein Format, das du anbietest und viele nicht.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="23" data-kurz="Live Cooking Catering Oberösterreich"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">24</td><td><span class="kf">Fingerfood Catering Linz</span><span class="lf">„Wer liefert Fingerfood-Catering in Linz?“</span></td><td class="why">90 Suchen im Monat, für Empfänge und Messen.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="24" data-kurz="Fingerfood Catering Linz"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">25</td><td><span class="kf">Caterer mit Eventplanung</span><span class="lf">„Welcher Caterer bietet auch Eventplanung an?“</span></td><td class="why">Passt zu deiner Rolle als Eventbegleiter.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="25" data-kurz="Caterer mit Eventplanung"><span>ja, bitte aufnehmen</span></label></td></tr><tr><td class="num">26</td><td><span class="kf">Catering Steyr</span><span class="lf">„Welche Caterer gibt es in Steyr?“</span></td><td class="why">70 Suchen im Monat, falls Steyr für dich wichtig ist.</td><td class="pass"><label class="pick"><input type="checkbox" name="q" value="26" data-kurz="Catering Steyr"><span>ja, bitte aufnehmen</span></label></td></tr></table></div>
+
+  <h3>Das fehlt noch</h3>
+  <div class="card">
+    <p style="margin-top:0;color:var(--g600);font-size:14px">Wie fragen deine Kund:innen noch? Gerne in ihren eigenen Worten.</p>
+    <textarea id="fehlt" rows="4" placeholder="Eine Frage pro Zeile"></textarea><p style="margin:14px 0 6px"><b>Dein Name</b></p><input id="name" type="text" autocomplete="name">
+  </div>
+  <div class="card send"><p id="stand" style="margin:0 0 10px;font-weight:700">0 von 12 ausgewählt</p><div class="btns"><button type="button" id="send">Antworten senden</button><button type="button" id="print" class="sec">Drucken / als PDF speichern</button></div><p id="msg" style="margin:10px 0 0;font-size:13.5px;color:var(--g600)">Ein Klick, und deine Auswahl ist bei uns.</p></div>
+  <div class="dark">
+    <h4>Wie es danach weitergeht</h4>
+    <p style="margin:0">Du sendest uns deine gewählten Suchbegriffe und wir gehen in die Analyse. In 10 bis 14 Tagen bekommst du von uns deinen Maßnahmenplan.</p>
+  </div>
+  <p class="foot" style="margin:10px 0 0;font-size:11.5px;padding-top:8px">sichtboa in KI · Suchanfragen für SKULINARIUM · Stand 30. September 2026 · Grundlage: Positionierungs-Fragebogen (Annahme), Kundenanfragen (Annahme), Fragen-Sammlung sichtboa (rund 80 Fragen), KWFinder-Export Österreich (8 Listen, 130 Begriffe), Rankscale-Methode (kurze Prompts, 3 Merkmale).</p>
+</section>
+</main>
+<script>
+(function(){
+  var K=12, MAIL="", FKEY="cdabc57a-1f47-4b3b-9ad5-69dd28802a23", FIRMA="SKULINARIUM", KEY='sa-'+FIRMA;
+  var boxes=[].slice.call(document.querySelectorAll('input[name=q]'));
+  var fehlt=document.getElementById('fehlt'), name=document.getElementById('name'), msg=document.getElementById('msg');
+  function sel(){return boxes.filter(function(b){return b.checked});}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify({q:sel().map(function(b){return b.value}),f:fehlt.value,n:name.value}));}catch(e){}}
+  function update(){
+    var c=sel().length;
+    boxes.forEach(function(b){b.disabled=!b.checked&&c>=K;b.closest('tr').classList.toggle('on',b.checked);});
+    document.getElementById('cnt').textContent=c;
+    document.getElementById('stand').textContent=c+' von '+K+' ausgewählt'+(c<K?' (noch '+(K-c)+')':' ✓');
+    document.querySelector('.counter').classList.toggle('full',c>=K);
+  }
+  try{var s=JSON.parse(localStorage.getItem(KEY)||'null');if(s){boxes.forEach(function(b){b.checked=s.q.indexOf(b.value)>-1});fehlt.value=s.f||'';name.value=s.n||'';}}catch(e){}
+  boxes.forEach(function(b){b.addEventListener('change',function(){update();save();});});
+  fehlt.addEventListener('input',save); name.addEventListener('input',save);
+  function text(){
+    var t='Suchanfragen '+FIRMA+' – Auswahl'+(name.value?' von '+name.value:'')+'\n\nAusgewählt ('+sel().length+' von '+K+'):\n';
+    sel().forEach(function(b){t+=b.value+'. '+b.dataset.kurz+'\n';});
+    if(fehlt.value.trim()) t+='\nDas fehlt noch:\n'+fehlt.value.trim()+'\n';
+    return t;
+  }
+  function check(){var c=sel().length;return c===K||confirm('Du hast '+c+' von '+K+' Fragen ausgewählt. Trotzdem weiter?');}
+  function copy(t){
+    var p=navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject();
+    return p.catch(function(){var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();
+      try{document.execCommand('copy');}catch(e){}a.remove();});
+  }
+  function viaMail(t){
+    copy(t).then(function(){
+      msg.innerHTML='Dein E-Mail-Programm öffnet sich mit deiner Auswahl'+(MAIL?'':' (bitte noch unsere Adresse eintragen)')+'. Öffnet sich nichts? Deine Auswahl ist bereits kopiert: einfach in eine E-Mail'+(MAIL?' an <b>'+MAIL+'</b>':' an uns')+' einfügen.';
+      location.href='mailto:'+MAIL+'?subject='+encodeURIComponent('Suchanfragen '+FIRMA+' – meine Auswahl')+'&body='+encodeURIComponent(t);
+    });
+  }
+  var btn=document.getElementById('send');
+  btn.onclick=function(){
+    if(!check())return; var t=text();
+    if(!FKEY){viaMail(t);return;}
+    btn.disabled=true; btn.textContent='Wird gesendet …';
+    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify({access_key:FKEY,subject:'Suchanfragen '+FIRMA+' – Auswahl'+(name.value?' von '+name.value:''),
+        from_name:name.value||FIRMA,firma:FIRMA,auswahl:sel().map(function(b){return b.value+'. '+b.dataset.kurz}).join('\n'),
+        das_fehlt_noch:fehlt.value.trim(),message:t,botcheck:''})})
+    .then(function(r){return r.json()}).then(function(j){
+      if(!j.success) throw 0;
+      document.querySelector('.send').innerHTML='<h4 style="margin:0 0 6px">Danke, deine Auswahl ist bei uns angekommen.</h4><p style="margin:0">Wir melden uns, sobald dein Maßnahmenplan fertig ist.</p>';
+      try{localStorage.removeItem(KEY)}catch(e){}
+    }).catch(function(){
+      btn.disabled=false; btn.textContent='Antworten senden';
+      msg.textContent='Senden hat nicht geklappt. Wir öffnen stattdessen dein E-Mail-Programm.'; viaMail(t);
+    });
+  };
+  document.getElementById('print').onclick=function(){window.print();};
+  update();
+})();
+</script>
+</body>
+</html>
