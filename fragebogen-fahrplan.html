@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fragebogen KI-Kompass | sichtboa in KI</title>
+<title>Fragebogen KI-Fahrplan | sichtboa in KI</title>
 <meta name="robots" content="noindex">
 <style>
   :root{--black:#17181a;--black-2:#24262a;--lime:#dce883;--blau:#1da1c2;--off:#fefcfa;--g100:#f0eee9;--g200:#e2ded4;--g400:#8f8f86;--g600:#56574f;--ok:#1a8f5a;--r:14px;--shadow:0 1px 3px rgba(23,24,26,.08),0 6px 24px rgba(23,24,26,.05);--F:'Libre Franklin',system-ui,sans-serif;--W:'Work Sans',system-ui,sans-serif}
@@ -58,8 +58,8 @@
 <body>
 <header><div class="wrap">
   <div class="brandrow"><svg viewBox="0 0 100 100" aria-hidden="true"><path class="c" d="M12,32 L12,12 L32,12"/><path class="c" d="M68,12 L88,12 L88,32"/><path class="c" d="M88,68 L88,88 L68,88"/><path class="c" d="M32,88 L12,88 L12,68"/><circle cx="72" cy="28" r="4.5" fill="#dce883"/></svg><div class="brand">sichtboa<small>IN KI</small></div></div>
-  <h1>Dein Fragebogen für den KI-Kompass</h1>
-  <p>Damit ChatGPT und Google dein Unternehmen empfehlen, müssen sie genau wissen, wer du bist, was du anbietest und warum man dich wählen sollte. Dauer: ca. 20 Minuten. <b style="color:#dce883">Je genauer du ausfüllst, desto genauer wird dein KI-Kompass.</b> Wir fragen nicht nach: Deine Antworten sind unsere einzige Grundlage. Du musst nicht alles sicher wissen. Wo du unsicher bist, schreib einfach deine Einschätzung, das hilft uns mehr als ein leeres Feld. Beispiele, Zahlen und echte Anfragen deiner Kund:innen helfen uns am meisten. Felder mit <span class="req" style="color:#dce883">*</span> sind Pflicht.</p>
+  <h1>Dein Fragebogen für den KI-Fahrplan</h1>
+  <p>Damit KI-Systeme wie ChatGPT dein Unternehmen empfehlen, müssen sie genau wissen, wer du bist, was du anbietest und warum man dich wählen sollte. Dauer: ca. 20–30 Minuten. <b style="color:#dce883">Je genauer du ausfüllst, desto genauer wird dein KI-Fahrplan.</b> Bitte schick ihn uns vor unserem Startgespräch, dann können wir dort gleich in die Tiefe gehen. Du musst nicht alles sicher wissen. Wo du unsicher bist, schreib einfach deine Einschätzung, das hilft uns mehr als ein leeres Feld. Beispiele, Zahlen und echte Anfragen deiner Kund:innen helfen uns am meisten. Felder mit <span class="req" style="color:#dce883">*</span> sind Pflicht.</p>
 </div></header>
 
 <div class="progress"><div class="wrap"><div class="bar"><i id="bar"></i></div><small id="prog">0 % ausgefüllt</small><small class="saved" id="saved"></small></div></div>
@@ -79,17 +79,21 @@
     <div><label class="q">Telefon</label><input type="tel" name="telefon"></div>
   </div>
   <div class="row">
-    <div><label class="q">E-Mail<span class="req">*</span><span class="hint">dorthin schicken wir deinen KI-Kompass</span></label><input type="email" name="email" required></div>
+    <div><label class="q">E-Mail<span class="req">*</span><span class="hint">dorthin schicken wir deine Unterlagen</span></label><input type="email" name="email" required></div>
     <div><label class="q">Adresse<span class="hint">Straße, PLZ, Ort</span></label><input type="text" name="adresse"></div>
   </div>
   <div class="row">
     <div><label class="q">Erreichbar / Öffnungszeiten</label><input type="text" name="oeffnungszeiten" placeholder="z. B. Mo–Fr 8–17 Uhr"></div>
     <div><label class="q">Gegründet im Jahr / Mitarbeitende</label><input type="text" name="gruendung_mitarbeiter" placeholder="z. B. 2012 / 6 Personen"></div>
   </div>
-  <label class="q">Welche 2 Seiten deiner Website sind dir am wichtigsten?<span class="req">*</span><span class="hint">Diese 2 Seiten prüfen wir zusätzlich zur Startseite. Am besten die Adresse aus dem Browser kopieren.</span></label>
+  <label class="q">Welche Seiten deiner Website sind dir am wichtigsten?<span class="hint">Deine wichtigsten Leistungsseiten, bis zu 3. Startseite und Kontaktseite prüfen wir sowieso. Am besten die Adresse aus dem Browser kopieren. Wenn du unsicher bist, lass es leer, dann wählen wir gemeinsam im Startgespräch.</span></label>
   <div class="row">
-    <div><input type="text" name="seite_1" placeholder="Seite 1, z. B. www.deine-firma.at/leistungen" required></div>
-    <div><input type="text" name="seite_2" placeholder="Seite 2" required></div>
+    <div><input type="text" name="seite_1" placeholder="Seite 1, z. B. www.deine-firma.at/leistungen"></div>
+    <div><input type="text" name="seite_2" placeholder="Seite 2"></div>
+  </div>
+  <div class="row">
+    <div><input type="text" name="seite_3" placeholder="Seite 3"></div>
+    <div></div>
   </div>
   <label class="q">Deine Profile im Internet<span class="hint">Google-Unternehmensprofil, LinkedIn, Facebook, Instagram, WKO Firmen A-Z … (Links, einer pro Zeile)</span></label>
   <textarea name="profile"></textarea>
@@ -197,7 +201,7 @@
 
 <fieldset>
   <legend><span>8</span>Fragen deiner Kund:innen</legend>
-  <p class="why">Genau so stellen wir die Fragen an ChatGPT und Google und messen, ob du genannt wirst.</p>
+  <p class="why">Genau so stellen wir die Fragen an 4 KI-Systeme und messen, ob du genannt wirst.</p>
   <label class="q">Welche 5–10 Fragen hörst du am häufigsten, bevor jemand bucht oder kauft?<span class="hint">eine pro Zeile, gerne in Kund:innen-Worten, z. B. „Wie viele Ersthelfer brauchen wir?“</span></label>
   <textarea name="kundenfragen" style="min-height:140px"></textarea>
   <label class="q">Mit welchen Worten, denkst du, suchen deine Kund:innen nach dir?<span class="hint">Deine Vermutung reicht, wir prüfen das mit echten Suchdaten. z. B. „Erste-Hilfe-Kurs Firma“, „Ersthelfer Ausbildung Betrieb“</span></label>
@@ -270,7 +274,7 @@ const comps = document.getElementById('comps');
 for (let i = 1; i <= 5; i++) comps.insertAdjacentHTML('beforeend', `<div class="comp"><input type="text" name="mb${i}_name" placeholder="Mitbewerber ${i}: Name${i <= 3 ? ' *' : ''}"${i <= 3 ? ' required' : ''}><input type="text" name="mb${i}_web" placeholder="Website"></div>`);
 
 const f = document.getElementById('f');
-const KEY = 'sichtboa_fragebogen_kompass_v2';
+const KEY = 'sichtboa_fragebogen_fahrplan_v3';
 const store = { get() { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch { return {}; } }, set(v) { try { localStorage.setItem(KEY, JSON.stringify(v)); return true; } catch { return false; } }, clear() { try { localStorage.removeItem(KEY); } catch {} } };
 
 function collect() {
@@ -327,18 +331,18 @@ document.getElementById('send').onclick = async () => {
   }
   err.style.display = 'none';
   const d = collect();
-  const out = { _typ: 'sichtboa-positionierung', _paket: 'KI-Kompass', _version: 2, _erstellt: new Date().toISOString(), ...d };
+  const out = { _typ: 'sichtboa-positionierung', _paket: 'KI-Fahrplan', _version: 3, _erstellt: new Date().toISOString(), ...d };
   const firma = d.firma_auftritt || d.firma_offiziell;
   const btn = document.getElementById('send'); btn.disabled = true; btn.textContent = 'Wird gesendet …';
   try {
     const r = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({ access_key: FKEY, subject: `Fragebogen KI-Kompass: ${firma}`, from_name: firma, replyto: d.email,
-        Firma: firma, Website: d.website, 'E-Mail': d.email, 'Wichtige Seiten': `${d.seite_1} | ${d.seite_2}`,
+      body: JSON.stringify({ access_key: FKEY, subject: `Fragebogen KI-Fahrplan: ${firma}`, from_name: firma, replyto: d.email,
+        Firma: firma, Website: d.website, 'E-Mail': d.email, 'Wichtige Seiten': [d.seite_1, d.seite_2, d.seite_3].filter(Boolean).join(' | ') || 'im Startgespräch',
         'Fragebogen (für das Plugin)': JSON.stringify(out) }) });
     const j = await r.json();
     if (!j.success) throw new Error(j.message || 'Fehler');
     store.clear();
-    document.querySelector('main').innerHTML = '<div class="done"><h2 style="margin-top:0">Danke, dein Fragebogen ist bei uns angekommen.</h2><p>Als Nächstes bekommst du von uns Vorschläge für Suchanfragen. Du wählst die 5 aus, die dir am wichtigsten sind. Danach messen wir 10 Tage lang und schicken dir deinen KI-Kompass per E-Mail.</p></div>';
+    document.querySelector('main').innerHTML = '<div class="done"><h2 style="margin-top:0">Danke, dein Fragebogen ist bei uns angekommen.</h2><p>Wir lesen alles vor unserem Startgespräch. Danach bekommst du Vorschläge für Suchanfragen und wählst die 12 aus, die dir am wichtigsten sind.</p></div>';
     window.scrollTo(0, 0);
   } catch (e) {
     btn.disabled = false; btn.textContent = 'Fragebogen absenden';
