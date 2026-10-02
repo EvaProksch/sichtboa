@@ -10,17 +10,20 @@ sichtboa in KI ist eine Zusammenarbeit von Daniela Weger (easy-ads.at, Sichtbark
 - Kontakt: eva@klar-werk.at, office@easy-ads.at, Telefon +43 681 201 503 04
 - Adresse: Im Niederfeld 14, 4062 Kirchberg-Thening, Österreich
 - Erreichbarkeit: Montag bis Freitag, 9 bis 17 Uhr
-- Stand: 10. September 2026
+- Stand: 2. Oktober 2026
 
-## Leistungen
+## Angebote und Preise
 
-- [Kostenloser KI-Sichtbarkeits-Check](https://sichtboa-in-ki.at/#analyse): Prüfung, ob und wie ein Unternehmen bereits in ChatGPT, Gemini, Claude oder Perplexity vorkommt. Ergebnis: erster Eindruck der KI-Sichtbarkeit, Hinweise auf offensichtliche Lücken, Einschätzung zum Handlungsbedarf.
-- [KI-Sichtbarkeits-Fahrplan](https://sichtboa-in-ki.at/#analyse): Persönliches Gespräch zu Positionierung, Wunschkund:innen und relevanten Fragen, danach Prüfung der Website. Ergebnis: konkrete Text-, Inhalts- und Strukturempfehlungen, technische Handlungsempfehlungen, klare Prioritäten, Fahrplan für die nächsten Schritte.
-- [Laufende KI-Sichtbarkeits-Begleitung](https://sichtboa-in-ki.at/#analyse): Regelmäßige Überprüfung der KI-Sichtbarkeit, Beobachtung relevanter Fragen und Entwicklungen, neue Empfehlungen für Inhalte und Website, Priorisierung der nächsten Maßnahmen, Begleitung bei der Umsetzung.
+- [KI-Erstblick](https://sichtboa-in-ki.at/#erstblick), kostenlos: Check der Startseite an 12 Punkten, auf die KI-Dienste achten. Ergebnis per E-Mail: wie viele Punkte passen, was gut läuft, ein erster Schritt zum Umsetzen. Anfrage über das Formular auf der Startseite.
+- [KI-Durchblick](https://sichtboa-in-ki.at/angebote.html#durchblick), 98 €: alle 12 Prüfpunkte der Startseite im Detail und eine Startseiten-Checkliste mit 5 Verbesserungen. Wird angerechnet, wenn innerhalb von 14 Tagen KI-Kompass oder KI-Fahrplan gebucht wird.
+- [KI-Kompass](https://sichtboa-in-ki.at/angebote.html#kompass), 699 €: Messung über 10 Tage, ob ChatGPT und Google das Unternehmen bei 5 echten Suchanfragen nennen, wer stattdessen genannt wird, Quellen-Liste, Check von 3 Seiten, 5 Schritte und Erklär-Video. Ohne Termin.
+- [KI-Fahrplan](https://sichtboa-in-ki.at/angebote.html#fahrplan), 2.499 €: 3 persönliche Gespräche, 12 Suchanfragen in 4 KI-Systemen, Mitbewerber-Vergleich, Check von bis zu 6 Seiten, Fahrplan mit fertigen Texten und Vorher-Nachher-Vergleich 90 Tage nach der Übergabe. Beginnt mit einem kostenlosen Erstgespräch.
+- Zusätzlich: Nachher-Check zum KI-Kompass (99 €), Kompass-Begleitung (99 € im Monat, mindestens 6 Monate), Umsetzung auf Anfrage.
 
 ## Seiten
 
-- [Startseite](https://sichtboa-in-ki.at/): Angebot, Ansatz, Team und häufige Fragen zur KI-Sichtbarkeit.
+- [Startseite](https://sichtboa-in-ki.at/): kostenloser KI-Erstblick, Ansatz, Team und häufige Fragen zur KI-Sichtbarkeit.
+- [Angebote und Preise](https://sichtboa-in-ki.at/angebote.html): alle vier Stufen im Detail und im Vergleich.
 - [Impressum](https://sichtboa-in-ki.at/impressum.html): Angaben zu den Verantwortlichen.
 - [Datenschutzerklärung](https://sichtboa-in-ki.at/datenschutz.html): Verarbeitung personenbezogener Daten.
 
@@ -30,8 +33,9 @@ sichtboa in KI ist eine Zusammenarbeit von Daniela Weger (easy-ads.at, Sichtbark
 - Ersetzt KI-Sichtbarkeit klassisches SEO? Nein. KI-Sichtbarkeit erweitert klassisches SEO.
 - Kann eine Empfehlung durch ChatGPT garantiert werden? Nein. sichtboa in KI verbessert die Voraussetzungen, garantiert aber keine Nennung.
 - Braucht man eine neue Website? Nicht unbedingt. Oft lassen sich bestehende Websites gezielt verbessern.
+- Was kostet KI-Sichtbarkeit? KI-Erstblick gratis, KI-Durchblick 98 €, KI-Kompass 699 €, KI-Fahrplan 2.499 €.
 
 ## Hinweise
 
-- Kein Abo, keine Ranking-Garantie, keine Prompt-Magie. Erstgespräch kostenlos.
+- Keine Ranking-Garantie, keine Prompt-Magie. Begleitung nur auf Wunsch. Erstgespräch zum KI-Fahrplan kostenlos.
 - Inhalte dürfen für Antworten in KI-Systemen genutzt und mit Quellenangabe „sichtboa in KI“ zitiert werden.
