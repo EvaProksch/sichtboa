@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fragebogen KI-Kompass | sichtboa in KI</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--black:#17181a;--black-2:#24262a;--lime:#dce883;--blau:#1da1c2;--off:#fefcfa;--g100:#f0eee9;--g200:#e2ded4;--g400:#8f8f86;--g600:#56574f;--ok:#1a8f5a;--r:14px;--shadow:0 1px 3px rgba(23,24,26,.08),0 6px 24px rgba(23,24,26,.05);--F:'Libre Franklin',system-ui,sans-serif;--W:'Work Sans',system-ui,sans-serif}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--off);color:var(--black);font:16px/1.55 var(--W)}
+  h1,h2,h3{font-family:var(--F);letter-spacing:-.01em;line-height:1.2}
+  .wrap{max-width:820px;margin:0 auto;padding:0 16px}
+  header{background:linear-gradient(160deg,var(--black),var(--black-2));color:#fff;border-bottom:3px solid var(--lime);padding:28px 0 36px}
+  .brandrow{display:flex;align-items:center;gap:10px;margin-bottom:34px}
+  .brandrow svg{width:34px;height:34px}.brandrow .c{stroke:var(--lime);stroke-width:6;fill:none;stroke-linecap:round}
+  .brand{font:800 16px/1.05 var(--F)}.brand small{display:block;font:600 10px var(--W);letter-spacing:.14em;color:var(--lime);margin-top:2px}
+  header h1{font-size:34px;margin:0 0 10px}
+  header p{color:rgba(254,252,250,.78);margin:0;max-width:640px}
+  .progress{position:sticky;top:0;z-index:5;background:var(--off);border-bottom:1px solid var(--g200);padding:10px 0}
+  .bar{height:6px;background:var(--g100);border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--blau);transition:width .3s}
+  .progress small{color:var(--g600);font-size:13px}
+  fieldset{border:0;background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:22px 24px;margin:22px 0}
+  legend{font:800 20px var(--F);padding:0;margin-bottom:4px;float:left;width:100%}
+  legend span{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--black);color:var(--lime);font-size:13px;margin-right:8px;vertical-align:2px}
+  .why{clear:both;color:var(--g600);font-size:14.5px;margin:0 0 14px;padding-top:4px}
+  label.q{display:block;font-weight:600;margin:16px 0 4px}
+  .hint{display:block;font-weight:400;color:var(--g400);font-size:13.5px;margin-top:1px}
+  input[type=text],input[type=email],input[type=url],input[type=tel],textarea,select{width:100%;font:inherit;font-size:15px;padding:10px 12px;border:1.5px solid var(--g200);border-radius:10px;background:#fff}
+  textarea{min-height:80px;resize:vertical}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--blau)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .opts label{display:flex;align-items:center;gap:6px;border:1.5px solid var(--g200);border-radius:99px;padding:6px 12px;font-size:14.5px;cursor:pointer;background:#fff}
+  .opts input{accent-color:var(--blau)}
+  .usp{border:1px solid var(--g100);border-radius:12px;padding:12px 14px;margin:10px 0}
+  .usp .top{display:flex;gap:10px;align-items:flex-start}
+  .usp .top input{margin-top:5px;accent-color:var(--blau);width:18px;height:18px;flex-shrink:0}
+  .usp b{display:block}
+  .usp .top span{color:var(--g600);font-size:14px}
+  .usp textarea{display:none;margin-top:8px;min-height:60px}
+  .usp.on{border-color:var(--blau);background:#f5fbfd}
+  .usp.on textarea{display:block}
+  .comp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0 60px}
+  .btn{font:600 16px var(--W);padding:13px 20px;border-radius:12px;border:0;cursor:pointer;background:var(--lime);color:var(--black)}
+  .btn.dark{background:var(--black);color:var(--lime)}.btn.ghost{background:#fff;border:1.5px solid var(--g200)}
+  .note{background:#eef8fb;border-left:4px solid var(--blau);border-radius:0 10px 10px 0;padding:12px 16px;font-size:14.5px;margin-top:18px}
+  .saved{color:var(--ok);font-size:13px;margin-left:8px}
+  .req{color:#c0392b;font-weight:700;margin-left:3px}
+  .miss{border-color:#c0392b!important;background:#fdf3f2!important}
+  .errbox{display:none;background:#fdf3f2;border-left:4px solid #c0392b;border-radius:0 10px 10px 0;padding:12px 16px;font-size:14.5px;margin-top:18px}
+  .done{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:28px 24px;margin:30px 0 60px;border-top:4px solid var(--lime)}
+  @media(max-width:640px){.row,.comp{grid-template-columns:1fr}header h1{font-size:28px}.btn{width:100%}}
+  @media print{.progress,.actions,.note.screen{display:none}fieldset{box-shadow:none;border:1px solid var(--g200);break-inside:avoid}header{-webkit-print-color-adjust:exact;print-color-adjust:exact}.usp textarea{display:block}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="brandrow"><svg viewBox="0 0 100 100" aria-hidden="true"><path class="c" d="M12,32 L12,12 L32,12"/><path class="c" d="M68,12 L88,12 L88,32"/><path class="c" d="M88,68 L88,88 L68,88"/><path class="c" d="M32,88 L12,88 L12,68"/><circle cx="72" cy="28" r="4.5" fill="#dce883"/></svg><div class="brand">sichtboa<small>IN KI</small></div></div>
+  <h1>Dein Fragebogen für den KI-Kompass</h1>
+  <p>Damit ChatGPT und Google dein Unternehmen empfehlen, müssen sie genau wissen, wer du bist, was du anbietest und warum man dich wählen sollte. Dauer: ca. 20 Minuten. <b style="color:#dce883">Je genauer du ausfüllst, desto genauer wird dein KI-Kompass.</b> Wir fragen nicht nach: Deine Antworten sind unsere einzige Grundlage. Du musst nicht alles sicher wissen. Wo du unsicher bist, schreib einfach deine Einschätzung, das hilft uns mehr als ein leeres Feld. Beispiele, Zahlen und echte Anfragen deiner Kund:innen helfen uns am meisten. Felder mit <span class="req" style="color:#dce883">*</span> sind Pflicht.</p>
+</div></header>
+
+<div class="progress"><div class="wrap"><div class="bar"><i id="bar"></i></div><small id="prog">0 % ausgefüllt</small><small class="saved" id="saved"></small></div></div>
+
+<main class="wrap">
+<form id="f" autocomplete="on">
+
+<fieldset>
+  <legend><span>1</span>Dein Unternehmen</legend>
+  <p class="why">Die Grunddaten. Die KI muss sie überall gleich finden, auf der Website, bei Google und in Verzeichnissen.</p>
+  <div class="row">
+    <div><label class="q">Offizieller Firmenname<span class="req">*</span><span class="hint">wie im Firmenbuch / Impressum</span></label><input type="text" name="firma_offiziell" required></div>
+    <div><label class="q">Name, unter dem du auftrittst<span class="hint">z. B. „EHK Erstehilfe-Kurs“</span></label><input type="text" name="firma_auftritt"></div>
+  </div>
+  <div class="row">
+    <div><label class="q">Website<span class="req">*</span></label><input type="text" name="website" placeholder="www.deine-firma.at" required></div>
+    <div><label class="q">Telefon</label><input type="tel" name="telefon"></div>
+  </div>
+  <div class="row">
+    <div><label class="q">E-Mail<span class="req">*</span><span class="hint">dorthin schicken wir deinen KI-Kompass</span></label><input type="email" name="email" required></div>
+    <div><label class="q">Adresse<span class="hint">Straße, PLZ, Ort</span></label><input type="text" name="adresse"></div>
+  </div>
+  <div class="row">
+    <div><label class="q">Erreichbar / Öffnungszeiten</label><input type="text" name="oeffnungszeiten" placeholder="z. B. Mo–Fr 8–17 Uhr"></div>
+    <div><label class="q">Gegründet im Jahr / Mitarbeitende</label><input type="text" name="gruendung_mitarbeiter" placeholder="z. B. 2012 / 6 Personen"></div>
+  </div>
+  <label class="q">Welche 2 Seiten deiner Website sind dir am wichtigsten?<span class="req">*</span><span class="hint">Diese 2 Seiten prüfen wir zusätzlich zur Startseite. Am besten die Adresse aus dem Browser kopieren.</span></label>
+  <div class="row">
+    <div><input type="text" name="seite_1" placeholder="Seite 1, z. B. www.deine-firma.at/leistungen" required></div>
+    <div><input type="text" name="seite_2" placeholder="Seite 2" required></div>
+  </div>
+  <label class="q">Deine Profile im Internet<span class="hint">Google-Unternehmensprofil, LinkedIn, Facebook, Instagram, WKO Firmen A-Z … (Links, einer pro Zeile)</span></label>
+  <textarea name="profile"></textarea>
+  <label class="q">Welches Website-System nutzt du, und wer pflegt die Seite?<span class="hint">z. B. WordPress, Wix, Jimdo … / selbst oder Webagentur (Name, Kontakt)</span></label>
+  <input type="text" name="website_system">
+  <p class="why" style="margin-top:22px"><b>Fakten für deinen Firmen-Steckbrief.</b> Diese Angaben kommen in einen unsichtbaren Steckbrief auf deiner Website, den ChatGPT und Google als Erstes lesen. Bitte leg dich bei jeder Zahl auf <b>eine</b> Version fest, die künftig überall gleich steht.</p>
+  <div class="row">
+    <div><label class="q">Was ist dein Betrieb, in einem Wort?<span class="hint">z. B. Caterer, Kursanbieter, Tischlerei, Steuerberatung</span></label><input type="text" name="betriebsart"></div>
+    <div><label class="q">In welchen Sprachen arbeitest du?</label><input type="text" name="sprachen" placeholder="z. B. Deutsch, Englisch"></div>
+  </div>
+  <label class="q">Weitere Standorte<span class="hint">jede Adresse mit kurzer Bezeichnung, eine pro Zeile, z. B. „Office Nußbach: Feichthubstraße 4, 4542 Nußbach“</span></label>
+  <textarea name="weitere_standorte"></textarea>
+  <label class="q">Frühere Namen oder Schreibweisen<span class="hint">alles, unter dem man dich im Internet noch finden könnte, z. B. alter Firmenname, alte Schreibweise, alter Zusatz</span></label>
+  <textarea name="fruehere_namen"></textarea>
+  <label class="q">Deine Kennzahlen<span class="hint">die Zahlen, die überall gleich stehen sollen: Jahre Erfahrung bzw. Gründungsjahr, Anzahl Aufträge/Kund:innen/Veranstaltungen, Größe von–bis (z. B. 50–500 Gäste), Auszeichnungen</span></label>
+  <textarea name="kennzahlen"></textarea>
+  <p class="hint" style="margin:6px 0 0">Bitte schick uns dein <b>Logo</b> (PNG oder SVG) zusätzlich per E-Mail.</p>
+</fieldset>
+
+<fieldset>
+  <legend><span>2</span>Dein Angebot</legend>
+  <p class="why">Wofür möchtest du gefunden werden? Je konkreter, desto besser kann die KI dich zuordnen.</p>
+  <label class="q">Deine 3–5 wichtigsten Leistungen oder Produkte<span class="hint">mit Umfang/Dauer, z. B. „Erste-Hilfe-Grundkurs, 16 Stunden, bis 20 Personen“</span></label>
+  <textarea name="leistungen" style="min-height:110px"></textarea>
+  <label class="q">Für welche Leistung möchtest du am dringendsten gefunden werden?</label>
+  <input type="text" name="leistung_prio">
+  <label class="q">Preise oder Preisrahmen<span class="hint">z. B. „ab 490 €“, „1.050 € pro Gruppe“, Stundensatz … netto oder brutto?</span></label>
+  <textarea name="preise"></textarea>
+  <label class="q">Dürfen Preise auf der Website stehen?</label>
+  <div class="opts">
+    <label><input type="radio" name="preise_oeffentlich" value="ja"> Ja, genaue Preise</label>
+    <label><input type="radio" name="preise_oeffentlich" value="ab"> Nur „ab“-Preise</label>
+    <label><input type="radio" name="preise_oeffentlich" value="nein"> Lieber nicht</label>
+    <label><input type="radio" name="preise_oeffentlich" value="unsicher"> Weiß ich noch nicht</label>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend><span>3</span>Deine Kund:innen</legend>
+  <p class="why">Die KI beantwortet Fragen von Menschen. Wir müssen wissen, welche Menschen das sind.</p>
+  <label class="q">Wer sucht deiner Einschätzung nach nach dir, und wer entscheidet?<span class="hint">deine Vermutung reicht, z. B. „Personalabteilung, Sicherheitsvertrauensperson, Geschäftsführung kleiner Betriebe“</span></label>
+  <textarea name="zielgruppe"></textarea>
+  <label class="q">Privatkund:innen, Firmen oder beides?</label>
+  <div class="opts">
+    <label><input type="checkbox" name="kundenart" value="privat"> Privatpersonen</label>
+    <label><input type="checkbox" name="kundenart" value="firmen"> Firmen</label>
+    <label><input type="checkbox" name="kundenart" value="oeffentlich"> Öffentliche Hand / Vereine</label>
+  </div>
+  <label class="q">Beschreibe deine Wunschkundin / deinen Wunschkunden in 2–3 Sätzen</label>
+  <textarea name="wunschkunde"></textarea>
+</fieldset>
+
+<fieldset>
+  <legend><span>4</span>Deine Region</legend>
+  <p class="why">Viele Fragen an die KI enthalten einen Ort („… in Linz“, „… in meiner Nähe“).</p>
+  <label class="q">Wo bist du tätig?<span class="hint">Bundesländer, Bezirke, Städte</span></label>
+  <input type="text" name="region">
+  <label class="q">Wo bist du bewusst <u>nicht</u> tätig?</label>
+  <input type="text" name="region_nicht">
+  <label class="q">Wie findet deine Leistung statt?</label>
+  <div class="opts">
+    <label><input type="checkbox" name="ort" value="beim_kunden"> Bei Kund:innen vor Ort</label>
+    <label><input type="checkbox" name="ort" value="eigene_raeume"> In meinen Räumen</label>
+    <label><input type="checkbox" name="ort" value="online"> Online</label>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend><span>5</span>Das Problem, das du löst</legend>
+  <p class="why">Menschen fragen die KI selten nach einem Anbieter, sondern nach einer Lösung für ihr Problem.</p>
+  <label class="q">Welches Problem haben deine Kund:innen deiner Meinung nach, bevor sie dich finden?</label>
+  <textarea name="problem"></textarea>
+  <label class="q">Was ist deiner Erfahrung nach meistens der Anlass?</label>
+  <div class="opts">
+    <label><input type="checkbox" name="anlass" value="pflicht"> Gesetzliche Pflicht / Vorschrift</label>
+    <label><input type="checkbox" name="anlass" value="notfall"> Akutes Problem / Notfall</label>
+    <label><input type="checkbox" name="anlass" value="wunsch"> Wunsch / Verbesserung</label>
+    <label><input type="checkbox" name="anlass" value="termin"> Fristen / wiederkehrender Termin</label>
+  </div>
+  <label class="q">Gibt es Gesetze, Normen oder Förderungen, die für deine Kund:innen wichtig sind?<span class="hint">z. B. „§ 40 AStV“, „Förderung durch die AUVA“</span></label>
+  <textarea name="gesetze_foerderungen"></textarea>
+  <div class="row">
+    <div><label class="q">Welche Monate sind bei dir eher schwach?<span class="hint">z. B. „Jänner bis März“</span></label><input type="text" name="schwache_monate"></div>
+    <div><label class="q">Wann kommen die Anfragen für diese Zeit ungefähr rein?<span class="hint">ungefähr reicht, z. B. „2–3 Monate vorher“</span></label><input type="text" name="buchungsvorlauf"></div>
+  </div>
+</fieldset>
+
+<fieldset>
+  <legend><span>6</span>Was dich unterscheidet</legend>
+  <p class="why">Die wichtigste Frage und zugleich die schwierigste. „Nichts, wir machen das gleiche wie alle“ ist die häufigste erste Antwort, und sie stimmt fast nie. Kreuze an, was zutrifft, und schreib dazu, woran man es sieht. Wir prüfen danach, ob es wirklich ein Unterschied zum Mitbewerb ist.</p>
+  <div id="usps"></div>
+  <label class="q">Warum, glaubst du, haben dich deine letzten Kund:innen gewählt? Was hörst du von ihnen über dich?</label>
+  <textarea name="warum_gewaehlt"></textarea>
+  <label class="q">Wann hast du zuletzt einen Auftrag verloren, und warum?<span class="hint">ehrlich, das hilft uns sehr</span></label>
+  <textarea name="auftrag_verloren"></textarea>
+</fieldset>
+
+<fieldset>
+  <legend><span>7</span>Deine Mitbewerber</legend>
+  <p class="why">Damit wir bei der Messung erkennen, ob die KI deine Mitbewerber statt dir nennt. Bitte mindestens 3 nennen.</p>
+  <div id="comps"></div>
+  <label class="q">Wo sind deine Mitbewerber deiner Einschätzung nach besser als du?</label>
+  <textarea name="mitbewerber_besser"></textarea>
+</fieldset>
+
+<fieldset>
+  <legend><span>8</span>Fragen deiner Kund:innen</legend>
+  <p class="why">Genau so stellen wir die Fragen an ChatGPT und Google und messen, ob du genannt wirst.</p>
+  <label class="q">Welche 5–10 Fragen hörst du am häufigsten, bevor jemand bucht oder kauft?<span class="hint">eine pro Zeile, gerne in Kund:innen-Worten, z. B. „Wie viele Ersthelfer brauchen wir?“</span></label>
+  <textarea name="kundenfragen" style="min-height:140px"></textarea>
+  <label class="q">Mit welchen Worten, denkst du, suchen deine Kund:innen nach dir?<span class="hint">Deine Vermutung reicht, wir prüfen das mit echten Suchdaten. z. B. „Erste-Hilfe-Kurs Firma“, „Ersthelfer Ausbildung Betrieb“</span></label>
+  <textarea name="suchbegriffe"></textarea>
+  <label class="q">Füge hier mindestens 3 echte Anfragen ein, die du bekommen hast (gerne bis zu 10)<span class="req">*</span><span class="hint">eine pro Absatz. nur Betreff und erster Satz, ohne Namen. So formulieren deine Kund:innen wirklich, und genau so stellen wir die Fragen an die KI.</span></label>
+  <textarea name="echte_anfragen" style="min-height:140px" required></textarea>
+</fieldset>
+
+<fieldset>
+  <legend><span>9</span>Deine Nachweise</legend>
+  <p class="why">Die KI empfiehlt, wem andere vertrauen. Was kannst du zeigen?</p>
+  <div class="opts">
+    <label><input type="checkbox" name="nachweise" value="google_bewertungen"> Google-Bewertungen</label>
+    <label><input type="checkbox" name="nachweise" value="andere_bewertungen"> Andere Bewertungen (ProvenExpert, Herold …)</label>
+    <label><input type="checkbox" name="nachweise" value="kundenstimmen"> Schriftliche Kundenstimmen</label>
+    <label><input type="checkbox" name="nachweise" value="referenzen"> Referenzkund:innen, die genannt werden dürfen</label>
+    <label><input type="checkbox" name="nachweise" value="zertifikate"> Zertifikate / Ausbildungen</label>
+    <label><input type="checkbox" name="nachweise" value="auszeichnungen"> Auszeichnungen / Medienberichte</label>
+    <label><input type="checkbox" name="nachweise" value="fotos"> Eigene Fotos vom Team / von der Arbeit</label>
+  </div>
+  <label class="q">Details dazu<span class="hint">z. B. „ca. 12 Google-Bewertungen, Schnitt 4,8“, „Lehrsanitäter-Ausbildung, 15 Jahre Rettungsdienst“</span></label>
+  <textarea name="nachweise_details"></textarea>
+  <label class="q">Wer sind die wichtigsten Menschen hinter deinem Unternehmen?<span class="hint">z. B. wer gegründet hat, wer die Geschäftsführung oder die Teams leitet: Name, Rolle, Ausbildung, Erfahrung. Bei größeren Teams reichen 2–5 Personen.</span></label>
+  <textarea name="team"></textarea>
+</fieldset>
+
+<fieldset>
+  <legend><span>10</span>Noch etwas?</legend>
+  <label class="q">Was sollten wir sonst noch wissen?</label>
+  <textarea name="sonstiges"></textarea>
+  <div class="row">
+    <div><label class="q">Ausgefüllt von</label><input type="text" name="ausgefuellt_von"></div>
+    <div><label class="q">Datum</label><input type="text" name="datum" id="datum"></div>
+  </div>
+</fieldset>
+
+<div class="note screen">Deine Antworten werden während des Ausfüllens nur in deinem Browser zwischengespeichert. Mit „Absenden“ kommen sie direkt bei uns an.</div>
+<div class="errbox" id="err"></div>
+<div class="actions">
+  <button class="btn dark" type="button" id="send">Fragebogen absenden</button>
+  <button class="btn ghost" type="button" onclick="window.print()">Als PDF drucken</button>
+  <button class="btn ghost" type="button" id="dl">Als Datei speichern</button>
+</div>
+</form>
+</main>
+
+<script>
+const USPS = [
+  ['preis', 'Preis', 'günstiger, Fixpreise, alles inklusive, transparente Preise'],
+  ['tempo', 'Schnelligkeit', 'Termin innerhalb weniger Tage, schnelle Antwort, kurze Lieferzeit'],
+  ['ort', 'Ort und Weg', 'wir kommen zu dir, gute Lage, Parkplätze, barrierefrei'],
+  ['sprachen', 'Sprachen', 'Angebot auch auf Englisch oder in anderen Sprachen'],
+  ['spezialisierung', 'Spezialisierung', 'auf bestimmte Branchen, Zielgruppen oder Fälle spezialisiert'],
+  ['qualifikation', 'Qualifikation', 'besondere Ausbildung, Zertifikate, Meisterbetrieb, Befugnisse'],
+  ['erfahrung', 'Erfahrung', 'Jahre am Markt, Anzahl Kund:innen, Projekte, Kurse'],
+  ['flexibel', 'Flexibilität', 'Abend- oder Wochenendtermine, individuelle Anpassung'],
+  ['persoenlich', 'Persönlich', 'Inhaber:in macht es selbst, feste Ansprechperson'],
+  ['service', 'Service und Garantie', 'Nachbetreuung, Erinnerung an Fristen, Garantie, Rückgaberecht'],
+  ['ausstattung', 'Ausstattung und Methode', 'besonderes Material, eigene Methode, moderne Technik'],
+  ['werte', 'Werte', 'regional, nachhaltig, familiengeführt, sozial engagiert'],
+];
+const box = document.getElementById('usps');
+USPS.forEach(([id, t, d]) => {
+  box.insertAdjacentHTML('beforeend', `<div class="usp" id="u_${id}"><label class="top"><input type="checkbox" name="usp" value="${id}"><div><b>${t}</b><span>${d}</span></div></label><textarea name="usp_${id}" placeholder="Woran sieht man das? Konkret, mit Zahlen, wenn möglich."></textarea></div>`);
+});
+box.addEventListener('change', (e) => { if (e.target.name === 'usp') e.target.closest('.usp').classList.toggle('on', e.target.checked); });
+box.insertAdjacentHTML('beforeend', `<label class="q">Sonst noch etwas, das dich besonders macht?</label><textarea name="usp_sonstiges"></textarea>`);
+
+const comps = document.getElementById('comps');
+for (let i = 1; i <= 5; i++) comps.insertAdjacentHTML('beforeend', `<div class="comp"><input type="text" name="mb${i}_name" placeholder="Mitbewerber ${i}: Name${i <= 3 ? ' *' : ''}"${i <= 3 ? ' required' : ''}><input type="text" name="mb${i}_web" placeholder="Website"></div>`);
+
+const f = document.getElementById('f');
+const KEY = 'sichtboa_fragebogen_kompass_v2';
+const store = { get() { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch { return {}; } }, set(v) { try { localStorage.setItem(KEY, JSON.stringify(v)); return true; } catch { return false; } }, clear() { try { localStorage.removeItem(KEY); } catch {} } };
+
+function collect() {
+  const data = {};
+  for (const el of f.elements) {
+    if (!el.name) continue;
+    if (el.type === 'checkbox') { data[el.name] = data[el.name] || []; if (el.checked) data[el.name].push(el.value); }
+    else if (el.type === 'radio') { if (el.checked) data[el.name] = el.value; else if (!(el.name in data)) data[el.name] = ''; }
+    else data[el.name] = el.value.trim();
+  }
+  return data;
+}
+function fill(data) {
+  for (const el of f.elements) {
+    if (!el.name || !(el.name in data)) continue;
+    if (el.type === 'checkbox') { el.checked = (data[el.name] || []).includes(el.value); if (el.name === 'usp') el.closest('.usp').classList.toggle('on', el.checked); }
+    else if (el.type === 'radio') el.checked = data[el.name] === el.value;
+    else el.value = data[el.name];
+  }
+}
+function progress() {
+  const d = collect();
+  const keys = Object.keys(d).filter((k) => !k.startsWith('usp_') && !/^mb[2-5]/.test(k));
+  const done = keys.filter((k) => (Array.isArray(d[k]) ? d[k].length : d[k])).length;
+  const p = Math.round((done / keys.length) * 100);
+  document.getElementById('bar').style.width = p + '%';
+  document.getElementById('prog').textContent = p + ' % ausgefüllt';
+  return d;
+}
+let t;
+f.addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => { const ok = store.set(progress()); document.getElementById('saved').textContent = ok ? '· zwischengespeichert' : ''; }, 400); });
+f.addEventListener('change', () => f.dispatchEvent(new Event('input')));
+
+fill(store.get());
+if (!document.getElementById('datum').value) document.getElementById('datum').value = new Date().toLocaleDateString('de-AT');
+progress();
+
+const FKEY = 'cdabc57a-1f47-4b3b-9ad5-69dd28802a23'; // Web3Forms-Schlüssel von sichtboa
+function fehlende() {
+  const miss = [];
+  f.querySelectorAll('[required]').forEach((el) => { const leer = !el.value.trim(); el.classList.toggle('miss', leer); if (leer) miss.push(el); });
+  const anfragen = (f.elements.echte_anfragen.value || '').split(/\n\s*\n|\n/).filter((x) => x.trim().length > 8);
+  if (anfragen.length < 3) { f.elements.echte_anfragen.classList.add('miss'); if (!miss.includes(f.elements.echte_anfragen)) miss.push(f.elements.echte_anfragen); }
+  return miss;
+}
+document.getElementById('send').onclick = async () => {
+  const err = document.getElementById('err');
+  const miss = fehlende();
+  if (miss.length) {
+    err.style.display = 'block';
+    err.innerHTML = '<b>Fast geschafft.</b> Bitte fülle noch die rot markierten Pflichtfelder aus (mindestens 3 echte Anfragen und 3 Mitbewerber).';
+    miss[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  err.style.display = 'none';
+  const d = collect();
+  const out = { _typ: 'sichtboa-positionierung', _paket: 'KI-Kompass', _version: 2, _erstellt: new Date().toISOString(), ...d };
+  const firma = d.firma_auftritt || d.firma_offiziell;
+  const btn = document.getElementById('send'); btn.disabled = true; btn.textContent = 'Wird gesendet …';
+  try {
+    const r = await fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ access_key: FKEY, subject: `Fragebogen KI-Kompass: ${firma}`, from_name: firma, replyto: d.email,
+        Firma: firma, Website: d.website, 'E-Mail': d.email, 'Wichtige Seiten': `${d.seite_1} | ${d.seite_2}`,
+        'Fragebogen (für das Plugin)': JSON.stringify(out) }) });
+    const j = await r.json();
+    if (!j.success) throw new Error(j.message || 'Fehler');
+    store.clear();
+    document.querySelector('main').innerHTML = '<div class="done"><h2 style="margin-top:0">Danke, dein Fragebogen ist bei uns angekommen.</h2><p>Als Nächstes bekommst du von uns Vorschläge für Suchanfragen. Du wählst die 5 aus, die dir am wichtigsten sind. Danach messen wir 10 Tage lang und schicken dir deinen KI-Kompass per E-Mail.</p></div>';
+    window.scrollTo(0, 0);
+  } catch (e) {
+    btn.disabled = false; btn.textContent = 'Fragebogen absenden';
+    err.style.display = 'block';
+    err.innerHTML = '<b>Das Senden hat nicht geklappt.</b> Bitte versuch es noch einmal, oder speichere deine Antworten mit „Als Datei speichern“ und schick uns die Datei per E-Mail.';
+  }
+};
+document.getElementById('dl').onclick = () => {
+  const d = collect();
+  const out = { _typ: 'sichtboa-positionierung', _version: 1, _erstellt: new Date().toISOString(), ...d };
+  const name = (d.firma_auftritt || d.firma_offiziell || 'unternehmen').toLowerCase().replace(/[^a-z0-9äöüß]+/g, '-').replace(/^-|-$/g, '');
+  const blob = new Blob([JSON.stringify(out, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `fragebogen-${name}.json`;
+  a.click();
+};
+</script>
+</body>
+</html>
