@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KI-Durchblick gratis · GAST Salzburg | sichtboa in KI</title>
+  <meta name="description" content="Für Besucher:innen der GAST Salzburg: dein KI-Durchblick um 0 € statt 98 €. Wir prüfen deine Website an 13 Punkten und zeigen dir die Ergebnisse persönlich.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#17181a">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <style>
+@font-face { font-family: "Open Sans"; src: url("assets/fonts/open-sans-400.woff2") format("woff2"); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: "Open Sans"; src: url("assets/fonts/open-sans-600.woff2") format("woff2"); font-style: normal; font-weight: 600; font-display: swap; }
+@font-face { font-family: "Open Sans"; src: url("assets/fonts/open-sans-700.woff2") format("woff2"); font-style: normal; font-weight: 700; font-display: swap; }
+@font-face { font-family: "Libre Franklin"; src: url("assets/fonts/libre-franklin-600.woff2") format("woff2"); font-style: normal; font-weight: 600; font-display: swap; }
+@font-face { font-family: "Libre Franklin"; src: url("assets/fonts/libre-franklin-700.woff2") format("woff2"); font-style: normal; font-weight: 700; font-display: swap; }
+:root { --ink: #17181a; --lime: #dce883; --offwhite: #fefcfa; --muted: #6c6c68; --white-line: rgba(254, 252, 250, 0.15); --gutter: clamp(1.25rem, 4vw, 3.5rem); }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--ink); color: var(--offwhite); font-family: "Open Sans", Arial, sans-serif; font-size: 1rem; line-height: 1.6; }
+a { color: inherit; }
+.wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
+.top { display: flex; justify-content: center; padding: 1.3rem 0 1rem; border-bottom: 1px solid var(--white-line); }
+.brand-logo { display: inline-flex; flex-direction: column; align-items: center; color: inherit; text-decoration: none; font-family: "Libre Franklin", "Open Sans", Arial, sans-serif; line-height: 1; }
+.brand-logo__word { position: relative; font-size: 1.75rem; font-weight: 700; letter-spacing: -0.04em; }
+.brand-logo__dot { position: absolute; top: -0.15em; right: -0.28em; width: 0.32em; height: 0.32em; border-radius: 50%; background: var(--lime); }
+.brand-logo__sub { margin-top: 0.45rem; color: var(--lime); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.38em; transform: translateX(0.2em); }
+h1, h2, h3, h4 { font-family: "Libre Franklin", "Open Sans", Arial, sans-serif; letter-spacing: -0.035em; margin: 0; }
+h1 { font-size: clamp(2.3rem, 9.5vw, 4.4rem); line-height: 1.02; margin-bottom: 1.2rem; -webkit-hyphens: auto; hyphens: auto; overflow-wrap: break-word; }
+h1 em { color: var(--lime); font-style: normal; }
+.eyebrow { margin: 0 0 0.9rem; color: var(--lime); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.lead { margin: 0 0 1.3rem; color: rgba(254, 252, 250, 0.78); font-size: 1.02rem; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 52px; padding: 0.8rem 1.4rem; border: 0; border-radius: 999px; background: var(--lime); color: var(--ink); font: 800 1rem "Open Sans", Arial, sans-serif; text-decoration: none; cursor: pointer; transition: transform 160ms ease; }
+.button:hover { transform: translateY(-1px); }
+.foot { padding: 2rem var(--gutter) 2.4rem; color: rgba(254, 252, 250, 0.5); font-size: 0.78rem; text-align: center; }
+.foot a { margin: 0 0.35rem; }
+
+.hero { padding: 2rem 0 3rem; }
+.grid { display: grid; gap: 2rem; }
+.ticket { display: flex; align-items: center; gap: 1rem; max-width: 460px; margin: 0 0 1.3rem; padding: 0.9rem 1.1rem; border-radius: 16px; background: var(--lime); color: var(--ink); }
+.ticket .old { display: block; font-weight: 700; font-size: 1.05rem; text-decoration: line-through; opacity: 0.55; line-height: 1.1; }
+.ticket .big { display: block; font: 700 2rem/1 "Libre Franklin", Arial, sans-serif; letter-spacing: -0.03em; }
+.ticket p { margin: 0; font-size: 0.85rem; font-weight: 700; line-height: 1.4; }
+.jump { margin: 0 0 1.6rem; min-height: 44px; padding: 0.6rem 1.2rem; font-size: 0.92rem; }
+.steps { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--white-line); }
+.steps li { display: grid; grid-template-columns: 1.9rem 1fr; gap: 0.9rem; padding: 0.95rem 0; border-bottom: 1px solid var(--white-line); color: rgba(254, 252, 250, 0.78); font-size: 0.93rem; line-height: 1.5; }
+.steps li > span { width: 1.9rem; height: 1.9rem; border-radius: 50%; background: var(--lime); color: var(--ink); font-weight: 800; font-size: 0.9rem; line-height: 1.9rem; text-align: center; }
+.steps b { display: block; color: var(--offwhite); font-size: 1rem; margin-bottom: 0.1rem; }
+.form { padding: 1.5rem 1.2rem; border-radius: 20px; background: var(--offwhite); color: var(--ink); scroll-margin-top: 1rem; }
+.form h2 { font-size: 1.45rem; margin-bottom: 0.2rem; }
+.form .hint { margin: 0 0 1rem; color: var(--muted); font-size: 0.85rem; }
+.field { margin-bottom: 0.85rem; }
+.field label { display: block; margin-bottom: 0.3rem; font-size: 0.85rem; font-weight: 700; }
+.field label small { font-weight: 400; color: var(--muted); }
+.field input { width: 100%; padding: 0.8rem 0.9rem; border: 1px solid rgba(23, 24, 26, 0.28); border-radius: 10px; background: #fff; color: var(--ink); font: inherit; font-size: 1rem; }
+.field input:focus { outline: 2px solid var(--ink); outline-offset: 1px; border-color: transparent; }
+.check { display: grid; grid-template-columns: 1.2rem 1fr; gap: 0.65rem; margin: 0.9rem 0; font-size: 0.83rem; line-height: 1.45; color: #3b3b38; cursor: pointer; }
+.check input { width: 1.15rem; height: 1.15rem; margin: 0.12rem 0 0; accent-color: var(--ink); }
+.check a { color: var(--ink); }
+.send { width: 100%; flex-direction: column; gap: 0.1rem; margin-top: 0.6rem; padding: 0.9rem 1rem; border: 2px solid var(--ink); font-size: 1.05rem; }
+.send small { font-size: 0.8rem; font-weight: 700; }
+.send[disabled] { opacity: 0.6; cursor: wait; }
+.small { margin: 0.7rem 0 0; color: var(--muted); font-size: 0.8rem; text-align: center; }
+.error { display: none; margin: 0.8rem 0 0; padding: 0.7rem 0.9rem; border-radius: 10px; background: #fde4de; color: #8a2414; font-size: 0.88rem; }
+.hp { position: absolute; left: -9999px; }
+@media (min-width: 900px) {
+  .hero { padding: 4rem 0 5rem; }
+  .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr); gap: 4.5rem; align-items: start; }
+  .form { padding: 2rem; position: sticky; top: 1.5rem; }
+  .jump { display: none; }
+  h1 { font-size: clamp(2.6rem, 3.6vw, 3.8rem); -webkit-hyphens: manual; hyphens: manual; }
+}
+  </style>
+</head>
+<body>
+<header class="top"><a class="brand-logo" href="index.html" aria-label="sichtboa in KI – Startseite"><span class="brand-logo__word">sichtboa<span class="brand-logo__dot" aria-hidden="true"></span></span><span class="brand-logo__sub">IN KI</span></a></header>
+<main class="hero">
+  <div class="wrap grid">
+    <div>
+      <p class="eyebrow">Exklusiv für Besucher:innen der GAST Salzburg</p>
+      <h1>Dein <span style="white-space:nowrap">KI-Durchblick.</span> <em>Geschenkt.</em></h1>
+      <div class="ticket"><div><span class="old">98 €</span><span class="big">0 €</span></div><p>Normalerweise 98 €.<br>Für dich gratis bis 22.11.2026.</p></div>
+      <p class="lead">Wir prüfen deine Website an 13 Punkten: Erlaubt sie KI? Versteht ChatGPT, was du anbietest und wo? Und was du als Nächstes tun kannst.</p>
+      <a class="button jump" href="#formular">Geschenk sichern ↓</a>
+      <ol class="steps">
+        <li><span>1</span><div><b>Du füllst das Formular aus</b>Dauert eine Minute.</div></li>
+        <li><span>2</span><div><b>Wir prüfen deine Website</b>In 1 bis 5 Werktagen ist deine Auswertung fertig. Wir melden uns per E-Mail.</div></li>
+        <li><span>3</span><div><b>Wir zeigen dir die Ergebnisse</b>In einem kurzen Gespräch (ca. 15 Min.). Danach bekommst du deinen Bericht als PDF.</div></li>
+      </ol>
+    </div>
+    <form class="form" id="formular" novalidate>
+      <h2>Jetzt Geschenk sichern</h2>
+      <p class="hint">Alle Felder sind Pflicht.</p>
+      <!-- Web3Forms: Der access_key legt fest, an welche Adresse die Anfrage geht. -->
+      <input type="hidden" name="access_key" value="cdabc57a-1f47-4b3b-9ad5-69dd28802a23">
+      <input type="hidden" name="from_name" value="sichtboa Website · Messe GAST">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="field"><label for="f-website">Deine Website</label><input id="f-website" name="Website" type="text" inputmode="url" placeholder="www.deine-firma.at" required autocomplete="url"></div>
+      <div class="field"><label for="f-firma">Name deines Unternehmens</label><input id="f-firma" name="Firma" type="text" placeholder="so wie auf deiner Website" required autocomplete="organization"></div>
+      <div class="field"><label for="f-name">Dein Name</label><input id="f-name" name="Name" type="text" placeholder="Vor- und Nachname" required autocomplete="name"></div>
+      <div class="field"><label for="f-email">E-Mail <small>(dorthin schreiben wir dir)</small></label><input id="f-email" name="email" type="email" placeholder="name@deine-firma.at" required autocomplete="email"></div>
+      <div class="field"><label for="f-tel">Telefon <small>(für unser Gespräch)</small></label><input id="f-tel" name="Telefon" type="tel" placeholder="+43 …" required autocomplete="tel"></div>
+      <label class="check"><input type="checkbox" name="Eigene Website" value="ja" required><span>Die Website gehört meinem Unternehmen oder ich darf sie prüfen lassen.</span></label>
+      <label class="check"><input type="checkbox" name="Einverstanden" value="ja" required><span>sichtboa in KI darf meine Angaben speichern, mir zur Auswertung per E-Mail schreiben und mich dazu anrufen. Mehr in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span></label>
+      <button class="button send" type="submit">KI-Durchblick gratis anfordern →<small>statt 98 € · nur bis 22.11.2026</small></button>
+      <p class="error" id="f-error" role="alert"></p>
+      <p class="small">Kein Abo, keine versteckten Kosten.</p>
+    </form>
+  </div>
+</main>
+<footer class="foot">sichtboa in KI · Daniela Weger &amp; Eva Proksch<br><a href="impressum.html">Impressum</a>·<a href="datenschutz.html">Datenschutz</a></footer>
+<script>
+(() => {
+  const BETREFF = "Messeangebot GAST - KI Durchblick um 0 EUR";
+  const DANKE = "messe-danke.html";
+  const form = document.getElementById("formular");
+  const err = document.getElementById("f-error");
+  const show = (msg) => { err.textContent = msg; err.style.display = "block"; };
+  form.addEventListener("submit", async (ev) => {
+    ev.preventDefault();
+    err.style.display = "none";
+    const leer = [...form.querySelectorAll("[required]")].filter((el) => el.type === "checkbox" ? !el.checked : !el.value.trim());
+    if (leer.length) { show("Bitte fülle alle Felder aus und hake die beiden Kästchen an."); leer[0].focus(); return; }
+    if (!/^(https?:\/\/)?[^\s.]+\.[^\s]{2,}$/.test(form.Website.value.trim())) { show("Bitte gib deine Website so ein: www.deine-firma.at"); form.Website.focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.value.trim())) { show("Bitte prüfe deine E-Mail-Adresse."); form.email.focus(); return; }
+    if (form.Telefon.value.replace(/\D/g, "").length < 6) { show("Bitte prüfe deine Telefonnummer."); form.Telefon.focus(); return; }
+    const data = Object.fromEntries(new FormData(form));
+    data.subject = BETREFF;
+    data.Angebot = "Messe GAST Salzburg: KI-Durchblick um 0 € statt 98 € (bis 22.11.2026)";
+    const btn = form.querySelector("button[type=submit]");
+    btn.disabled = true;
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) });
+      const out = await res.json();
+      if (!out.success) throw new Error(out.message || "Fehler");
+      const vorname = form.Name.value.trim().split(/\s+/)[0] || "";
+      try { sessionStorage.setItem("sb_vorname", vorname); } catch (e) {}   // Vorname nur im Browser, nicht in der Adresse
+      window.location.href = DANKE;
+    } catch (e) {
+      show("Das hat leider nicht geklappt. Bitte versuch es noch einmal oder schreib uns an hallo@sichtboa-in-ki.at.");
+      btn.disabled = false;
+    }
+  });
+})();
+</script>
+</body>
+</html>
