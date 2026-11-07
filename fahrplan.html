@@ -108,7 +108,7 @@ h1 em { color: var(--lime); font-style: normal; }
       <input type="hidden" name="from_name" value="sichtboa Website · KI-Fahrplan">
       <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="field"><label for="f-website">Deine Website</label><input id="f-website" name="Website" type="text" placeholder="www.deine-firma.at" required></div><div class="field"><label for="f-firma">Name deines Unternehmens</label><input id="f-firma" name="Firma" type="text" placeholder="so wie auf deiner Website" required></div><div class="field"><label for="f-name">Dein Name</label><input id="f-name" name="Name" type="text" placeholder="Vor- und Nachname" required></div><div class="field"><label for="f-email">E-Mail <small>(dorthin schreiben wir dir)</small></label><input id="f-email" name="email" type="email" placeholder="name@deine-firma.at" required></div><div class="field"><label for="f-tel">Telefon <small>(für unser Erstgespräch)</small></label><input id="f-tel" name="Telefon" type="tel" placeholder="+43 …" required></div>
-      <fieldset class="ki"><legend>Deine KI-Dienste <small>(4 inklusive)</small></legend><p class="ki-hint">Angehakt ist unsere Empfehlung. Du kannst tauschen und im Erstgespräch noch ändern. Jeder weitere KI-Dienst kostet 149 € zzgl. USt.</p><div class="kis"><label class="kc"><input type="checkbox" name="KI" value="ChatGPT" checked><span>ChatGPT</span></label><label class="kc"><input type="checkbox" name="KI" value="Google" checked><span>Google <small>(KI-Antwort in der Suche)</small></span></label><label class="kc"><input type="checkbox" name="KI" value="Gemini" checked><span>Gemini</span></label><label class="kc"><input type="checkbox" name="KI" value="Claude" checked><span>Claude</span></label><label class="kc"><input type="checkbox" name="KI" value="Microsoft Copilot"><span>Microsoft Copilot</span></label><label class="kc"><input type="checkbox" name="KI" value="Perplexity"><span>Perplexity</span></label></div><p class="ki-sum" id="ki-sum" aria-live="polite"></p></fieldset>
+      <fieldset class="ki"><legend>Deine KI-Dienste <small>(bitte 4 auswählen)</small></legend><p class="ki-hint">Angehakt ist unsere Empfehlung. Du kannst tauschen und im Erstgespräch noch ändern.</p><div class="kis"><label class="kc"><input type="checkbox" name="KI" value="ChatGPT" checked><span>ChatGPT</span></label><label class="kc"><input type="checkbox" name="KI" value="Google AI Overview" checked><span>Google AI Overview <small>(Google-Suche)</small></span></label><label class="kc"><input type="checkbox" name="KI" value="Google AI Mode"><span>Google AI Mode <small>(Google-Suche)</small></span></label><label class="kc"><input type="checkbox" name="KI" value="Google Gemini" checked><span>Google Gemini</span></label><label class="kc"><input type="checkbox" name="KI" value="Claude" checked><span>Claude</span></label><label class="kc"><input type="checkbox" name="KI" value="Perplexity"><span>Perplexity</span></label></div><p class="ki-sum" id="ki-sum" aria-live="polite"></p></fieldset>
       <div class="field"><label for="f-termin">Terminwunsch <small>(Freiwillig)</small></label><input id="f-termin" name="Terminwunsch" type="text" placeholder="z. B. vormittags, ab 3. November"></div>
       <label class="check"><input type="checkbox" name="Einverstanden" value="ja" required><span>Ja, ihr dürft mich für das kostenlose Erstgespräch anrufen und anschreiben und meine Angaben dafür speichern. Die Anfrage ist unverbindlich. <a href="datenschutz.html">Datenschutz</a></span></label>
       <label class="check"><input type="checkbox" name="Angebote und Newsletter" value="ja"><span>Freiwillig: Schickt mir eure Angebote und ab und zu Tipps zur KI-Sichtbarkeit per E-Mail (Newsletter). Jederzeit abbestellbar.</span></label>
@@ -123,7 +123,7 @@ h1 em { color: var(--lime); font-style: normal; }
 (() => {
   const BETREFF = "KI-Fahrplan: Erstgespräch angefragt";
   const DANKE = "fahrplan-danke.html";
-  const GRUND = 2990, INKL = 4, EXTRA = 149;
+  const GRUND = 2990, INKL = 4, EXTRA = 0;
   const eur = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " €";
   const form = document.getElementById("formular");
   const err = document.getElementById("f-error");
@@ -133,8 +133,8 @@ h1 em { color: var(--lime); font-style: normal; }
   const gewaehlt = () => [...form.querySelectorAll('input[name="KI"]:checked')].map((el) => el.value);
   const rechne = () => {
     const n = gewaehlt().length, mehr = Math.max(0, n - INKL);
-    if (n < INKL) { sum.className = "ki-sum warn"; sum.textContent = `Bitte wähle ${INKL} KI-Dienste (${n} gewählt).`; }
-    else if (!mehr) { sum.className = "ki-sum"; sum.textContent = `${INKL} KI-Dienste inklusive · ${eur(GRUND)} zzgl. USt.`; }
+    if (n !== INKL) { sum.className = "ki-sum warn"; sum.textContent = `Bitte wähle genau ${INKL} KI-Dienste (${n} gewählt).`; }
+    else if (!mehr) { sum.className = "ki-sum"; sum.textContent = `${INKL} KI-Dienste gewählt · ${eur(GRUND)} zzgl. USt.`; }
     else { sum.className = "ki-sum"; sum.textContent = `${INKL} inklusive + ${mehr} weitere à ${eur(EXTRA)} = ${eur(GRUND + mehr * EXTRA)} zzgl. USt.`; }
     sub.textContent = `${eur(GRUND + mehr * EXTRA)} zzgl. USt. · Erstgespräch kostenlos`;
   };
@@ -149,12 +149,12 @@ h1 em { color: var(--lime); font-style: normal; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.value.trim())) { show("Bitte prüfe deine E-Mail-Adresse."); form.email.focus(); return; }
     if (form.Telefon.value.trim() && form.Telefon.value.replace(/\D/g, "").length < 6) { show("Bitte prüfe deine Telefonnummer."); form.Telefon.focus(); return; }
     const ki = gewaehlt();
-    if (ki.length < INKL) { show(`Bitte wähle ${INKL} KI-Dienste.`); sum.scrollIntoView({ block: "center" }); return; }
+    if (ki.length !== INKL) { show(`Bitte wähle genau ${INKL} KI-Dienste.`); sum.scrollIntoView({ block: "center" }); return; }
     const mehr = Math.max(0, ki.length - INKL);
     const data = Object.fromEntries(new FormData(form));
     data.subject = BETREFF;
     data["KI-Dienste"] = ki.join(", ");
-    data["Weitere KI-Dienste"] = mehr ? `${mehr} × ${eur(EXTRA)}` : "keine";
+    
     delete data.KI;
     data["Angebote und Newsletter"] = form.querySelector('[name="Angebote und Newsletter"]').checked ? "ja" : "nein";
     data.Angebot = `KI-Fahrplan: ${eur(GRUND + mehr * EXTRA)} zzgl. 20 % USt.`;

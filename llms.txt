@@ -10,7 +10,7 @@ sichtboa in KI ist eine Zusammenarbeit von Daniela Weger (easy-ads.at, Sichtbark
 - Kontakt: hallo@sichtboa-in-ki.at, Telefon +43 681 201 503 04
 - Adresse: Im Niederfeld 14, 4062 Kirchberg-Thening, Österreich
 - Erreichbarkeit: Montag bis Donnerstag, 9 bis 17 Uhr
-- Stand: 6. November 2026
+- Stand: 7. November 2026
 
 ## Angebote und Preise
 
@@ -18,9 +18,9 @@ Alle Preise zzgl. 20 % USt. Verrechnet wird über easyAds, Mag. Daniela Weger.
 
 - [KI-Erstblick](https://sichtboa-in-ki.at/#erstblick), kostenlos: Check der Startseite an 12 Punkten, auf die KI-Dienste achten. Ergebnis per E-Mail: wie viele Punkte passen, ob die Website KI-Dienste erlaubt, was gut läuft, ein erster Schritt zum Umsetzen. Anfrage über das Formular auf der Startseite.
 - [KI-Durchblick](https://sichtboa-in-ki.at/angebote.html#durchblick), 98 €: alle 13 Prüfpunkte der Startseite im Detail, mit Test, ob der Server KI-Dienste wirklich hineinlässt, und 5 schnelle Verbesserungen für die Startseite. Wird angerechnet, wenn innerhalb von 14 Tagen KI-Kompass oder KI-Fahrplan gebucht wird.
-- [KI-Kompass](https://sichtboa-in-ki.at/angebote.html#kompass), 699 € zzgl. USt.: Messung über 10 Tage, ob 2 KI-Dienste nach Wahl (ChatGPT, Google, Gemini, Claude, Microsoft Copilot oder Perplexity; jeder weitere 49 €) das Unternehmen bei 5 echten Suchanfragen nennen, wer stattdessen genannt wird und wie oft, Eintrags-Liste (wo die KI nachliest), 5 ausführliche Schritte mit Vorschlägen für die Website, fix fertige Vorlagen für Online-Einträge, die die KI liest, Check von bis zu 3 Seiten und Erklär-Video. Ohne Termin.
-- [KI-Fahrplan](https://sichtboa-in-ki.at/angebote.html#fahrplan), 2.990 € zzgl. USt.: 3 persönliche Termine, 3 Monate Begleitung bei der Umsetzung mit monatlicher Abstimmung per Mail, 12 Suchanfragen in 4 KI-Diensten nach Wahl (jeder weitere 149 €), Mitbewerber-Vergleich, Check von bis zu 6 Seiten mit Server-Test, Fahrplan mit klaren To-dos und fertigen Texten und Erfolgs-Check 90 Tage nach der Übergabe. Beginnt mit einem kostenlosen Erstgespräch.
-- Zusätzlich: Erfolgs-Check zum KI-Kompass nach 90 Tagen (99 €), Kompass-Begleitung (99 € im Monat, mindestens 6 Monate), Umsetzung auf Anfrage.
+- [KI-Kompass](https://sichtboa-in-ki.at/angebote.html#kompass), 799 € zzgl. USt.: Messung über 10 Tage, ob 2 KI-Dienste nach Wahl (empfohlen: ChatGPT und Google Gemini; zur Wahl außerdem Google AI Overview, Google AI Mode, Claude, Perplexity und weitere) das Unternehmen bei 5 echten Suchanfragen nennen, wer stattdessen genannt wird und wie oft, Eintrags-Liste (wo die KI nachliest), 5 ausführliche Schritte mit Vorschlägen für die Website, fix fertige Vorlagen für Online-Einträge, die die KI liest, Check von bis zu 3 Seiten und Erklär-Video. Ohne Termin.
+- [KI-Fahrplan](https://sichtboa-in-ki.at/angebote.html#fahrplan), 2.990 € zzgl. USt.: 3 persönliche Termine, 3 Monate Begleitung bei der Umsetzung mit monatlicher Abstimmung per Mail, 12 Suchanfragen in 4 KI-Diensten nach Wahl (z. B. ChatGPT, Google AI Overview, Google AI Mode, Google Gemini, Claude, Perplexity), Mitbewerber-Vergleich, Check von bis zu 6 Seiten mit Server-Test, Fahrplan mit klaren To-dos und fertigen Texten und Erfolgs-Check 90 Tage nach der Übergabe. Beginnt mit einem kostenlosen Erstgespräch.
+- Zusätzlich: Erfolgs-Check zum KI-Kompass nach 90 Tagen (249 €), Kompass-Begleitung (ab 199 € im Monat, mindestens 6 Monate), Umsetzung auf Anfrage.
 
 ## Seiten
 
@@ -35,7 +35,7 @@ Alle Preise zzgl. 20 % USt. Verrechnet wird über easyAds, Mag. Daniela Weger.
 - Ersetzt KI-Sichtbarkeit klassisches SEO? Nein. KI-Sichtbarkeit erweitert klassisches SEO.
 - Kann eine Empfehlung durch ChatGPT garantiert werden? Nein. sichtboa in KI verbessert die Voraussetzungen, garantiert aber keine Nennung.
 - Braucht man eine neue Website? Nicht unbedingt. Oft lassen sich bestehende Websites gezielt verbessern.
-- Was kostet KI-Sichtbarkeit? KI-Erstblick gratis, KI-Durchblick 98 €, KI-Kompass 699 €, KI-Fahrplan 2.990 €.
+- Was kostet KI-Sichtbarkeit? KI-Erstblick gratis, KI-Durchblick 98 €, KI-Kompass 799 €, KI-Fahrplan 2.990 €.
 
 ## Hinweise
 
