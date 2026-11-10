@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gratis Google-Ads-Live-Check für Gastronomie | easyAds</title>
+<meta name="description" content="20 Minuten, live am Bildschirm: Wir schauen gemeinsam, wie dein Lokal bei Google gefunden wird. Gratis für die ersten 10 Betriebe.">
+<!-- Ersatzschriften für adelle / adelle-sans (Adobe Fonts). Wenn du Adobe Fonts nutzt, kannst du sie hier austauschen. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cyan:#12C3DE;
+  --cyan-dark:#0A9DB4;
+  --ink:#111111;
+  --text:#2B2B2B;
+  --muted:#656565;
+  --bg:#FCFCFC;
+  --white:#FFFFFF;
+  --line:#E4E4E4;
+  --soft:#EEF9FB;
+  --slab:"Zilla Slab", "adelle-web", Georgia, serif;
+  --sans:"Source Sans 3", "adelle-sans", Arial, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:18px;line-height:1.6;letter-spacing:.01em}
+img{max-width:100%;display:block}
+a{color:var(--cyan-dark)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--slab);color:var(--ink);font-weight:600;line-height:1.15}
+.eyebrow{font-family:var(--slab);text-transform:uppercase;letter-spacing:.2em;color:var(--cyan);font-weight:600;font-size:15px}
+.h-up{text-transform:uppercase;letter-spacing:.1em}
+.btn{display:inline-block;background:var(--cyan);color:#fff;text-decoration:none;font-family:var(--slab);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:16px;padding:18px 30px;border:0;cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--cyan-dark)}
+.btn-ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.small{font-size:15px;color:var(--muted)}
+
+/* Header */
+header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+header img{height:40px;width:auto}
+header .btn{padding:12px 20px;font-size:14px}
+
+/* Hero */
+.hero{background:var(--white);padding:72px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+.hero h1{font-size:46px;text-transform:uppercase;letter-spacing:.06em;color:var(--cyan);margin:14px 0 22px}
+.hero h1 span{color:var(--ink);display:block}
+.hero p.lead{font-size:21px;max-width:560px;margin-bottom:28px}
+.hero .ctas{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.badges{display:flex;gap:22px;flex-wrap:wrap;margin-top:26px;font-size:16px;color:var(--muted)}
+.badges b{color:var(--ink)}
+.hero-card{background:var(--ink);color:#fff;padding:36px;position:relative}
+.hero-card .eyebrow{color:var(--cyan)}
+.hero-card .price{font-family:var(--slab);font-size:64px;font-weight:700;line-height:1;margin:14px 0 6px}
+.hero-card .price s{font-size:28px;color:#9A9A9A;font-weight:500;margin-right:10px}
+.hero-card ul{list-style:none;margin:18px 0 0;display:grid;gap:10px}
+.hero-card li{padding-left:28px;position:relative}
+.hero-card li::before{content:"";position:absolute;left:0;top:9px;width:14px;height:8px;border-left:3px solid var(--cyan);border-bottom:3px solid var(--cyan);transform:rotate(-45deg)}
+.spots{margin-top:22px;padding-top:18px;border-top:1px solid #333;font-size:15px;color:#cfcfcf}
+
+/* Sections */
+section{padding:88px 0}
+section h2{font-size:36px;text-transform:uppercase;letter-spacing:.08em;margin:10px 0 18px}
+.intro{max-width:720px;font-size:20px;margin-bottom:44px}
+
+/* Problem */
+.problem{background:var(--bg)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:var(--white);border:1px solid var(--line);padding:30px}
+.card h3{font-size:22px;margin-bottom:10px}
+.stat{font-family:var(--slab);font-size:54px;color:var(--cyan);font-weight:700;line-height:1;margin-bottom:12px}
+.source{font-size:14px;color:var(--muted);margin-top:10px}
+
+/* Agenda */
+.agenda{background:var(--white)}
+.timeline{display:grid;gap:0;border-left:3px solid var(--cyan);margin-left:8px}
+.step{display:grid;grid-template-columns:1fr;gap:24px;padding:22px 0 22px 28px;position:relative}
+.step::before{content:"";position:absolute;left:-10px;top:30px;width:17px;height:17px;background:var(--white);border:3px solid var(--cyan);border-radius:50%}
+.step .min{font-family:var(--slab);font-weight:600;color:var(--cyan);text-transform:uppercase;letter-spacing:.1em;font-size:16px;padding-top:4px}
+.step h3{font-size:22px;margin-bottom:6px}
+.note{background:var(--soft);padding:22px 26px;margin-top:36px;border-left:4px solid var(--cyan)}
+
+/* Pakete */
+.pakete{background:var(--bg)}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.tier{background:var(--white);border:1px solid var(--line);padding:34px 30px;display:flex;flex-direction:column}
+.tier.featured{border:3px solid var(--cyan);position:relative}
+.tier .tag{position:absolute;top:-15px;left:30px;background:var(--cyan);color:#fff;font-family:var(--slab);text-transform:uppercase;letter-spacing:.12em;font-size:13px;padding:6px 12px}
+.tier h3{font-size:24px;text-transform:uppercase;letter-spacing:.06em}
+.tier .for{color:var(--muted);font-size:16px;margin:6px 0 18px}
+.tier .p{font-family:var(--slab);font-size:40px;font-weight:700;color:var(--ink);line-height:1.1}
+.tier .p s{font-size:22px;color:#9a9a9a;font-weight:500;margin-right:8px}
+.tier .pnote{font-size:15px;color:var(--muted);margin:4px 0 20px}
+.tier ul{list-style:none;display:grid;gap:9px;margin-bottom:22px;font-size:17px}
+.tier li{padding-left:26px;position:relative}
+.tier li::before{content:"";position:absolute;left:0;top:8px;width:12px;height:7px;border-left:3px solid var(--cyan);border-bottom:3px solid var(--cyan);transform:rotate(-45deg)}
+.tier li.no{color:var(--muted)}
+.tier li.no::before{border:0;content:"–";transform:none;top:0;left:3px;color:var(--muted)}
+.tier .btn{margin-top:auto;text-align:center}
+
+/* Über mich */
+.about{background:var(--white)}
+.about .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.about-img{background:#ddd;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:15px;text-align:center;padding:20px;filter:grayscale(1)}
+.about-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;filter:grayscale(1)}
+.certs{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.certs span{border:1px solid var(--line);padding:6px 12px;font-size:15px;background:var(--bg)}
+
+/* FAQ */
+.faq{background:var(--bg)}
+details{background:var(--white);border:1px solid var(--line);margin-bottom:12px}
+summary{cursor:pointer;padding:20px 24px;font-family:var(--slab);font-size:20px;font-weight:600;color:var(--ink);list-style:none;position:relative;padding-right:56px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:24px;top:14px;font-size:30px;color:var(--cyan)}
+details[open] summary::after{content:"–"}
+details p{padding:0 24px 22px}
+
+/* Formular */
+.form-sec{background:var(--ink);color:#fff}
+.form-sec h2{color:#fff}
+.form-sec .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+.form-sec .intro{color:#ddd}
+.cta-box{background:var(--white);color:var(--text);padding:40px;display:flex;flex-direction:column;gap:24px;justify-content:center;font-size:20px}
+.cta-box .btn{text-align:center;font-size:17px;padding:20px}
+form{background:var(--white);color:var(--text);padding:36px;display:grid;gap:16px}
+label{font-weight:600;font-size:16px;display:grid;gap:6px}
+input,select,textarea{font:inherit;font-size:17px;padding:13px 14px;border:1px solid #cfcfcf;background:#fff;width:100%}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--cyan);outline-offset:0;border-color:var(--cyan)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:15px}
+.check input{width:20px;height:20px;margin-top:3px;flex:none}
+form .btn{width:100%;font-size:17px;padding:20px}
+.trust{list-style:none;display:grid;gap:12px;margin-top:24px}
+.trust li{padding-left:28px;position:relative;color:#eee}
+.trust li::before{content:"";position:absolute;left:0;top:9px;width:13px;height:7px;border-left:3px solid var(--cyan);border-bottom:3px solid var(--cyan);transform:rotate(-45deg)}
+
+footer{background:#000;color:#aaa;padding:28px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:#ddd;margin-left:18px}
+
+/* Mobile CTA */
+.mobile-cta{display:none}
+
+@media (max-width:900px){
+  .hero .wrap,.about .wrap,.form-sec .wrap{grid-template-columns:1fr}
+  .grid3,.tiers{grid-template-columns:1fr}
+  .tier.featured{margin-top:10px}
+  .hero{padding:44px 0 56px}
+  .hero h1{font-size:32px}
+  section{padding:64px 0}
+  section h2{font-size:27px}
+  .step{grid-template-columns:1fr;gap:4px}
+  .row2{grid-template-columns:1fr}
+  .about-photo{max-width:320px}
+  header .btn{display:none}
+  .mobile-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:12px 16px;background:rgba(255,255,255,.96);border-top:1px solid var(--line)}
+  .mobile-cta .btn{display:block;text-align:center}
+  body{padding-bottom:76px}
+  footer a{margin:0 16px 0 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="https://easy-ads.at" aria-label="easyAds Startseite">
+      <!-- Logo: am besten als Datei ins Repo legen (z. B. logo.png) und den Pfad hier anpassen -->
+      <img src="https://images.squarespace-cdn.com/content/v1/5d985cd8edb6cc40776b876b/1570266840184-XDO08YPJBDL1OAV9LPYM/logo_easy_ads-05.png?format=500w" alt="easyAds Onlineprofi">
+    </a>
+    <a class="btn" href="#termin">Gratis-Termin sichern</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="padding-top:72px">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Messe-Angebot für Gastronomie &amp; Hotellerie</p>
+      <h1>Wird dein Lokal bei Google gefunden?<span>Wir schauen's uns live an.</span></h1>
+      <p class="lead">In 20 Minuten schauen wir gemeinsam am Bildschirm, wie Gäste dich bei Google finden – oder eben nicht – und wo deine Google Ads stehen. Ohne Vorbereitung, ohne Verpflichtung.</p>
+      <div class="ctas">
+        <a class="btn" href="#termin">Gratis-Live-Check sichern</a>
+        <a class="small" href="#ablauf">So läuft's ab ↓</a>
+      </div>
+      <div class="badges">
+        <span><b>20 Min.</b> per Video-Call</span>
+        <span><b>Gratis</b> – nur 10 Termine</span>
+      </div>
+    </div>
+    <aside class="hero-card" aria-label="Angebot">
+      <p class="eyebrow">Google-Ads-Live-Check</p>
+      <p class="price">Gratis</p>
+      <p>für die ersten 10 Betriebe</p>
+      <ul>
+        <li>Live-Google-Suche wie ein Gast</li>
+        <li>5-Punkte-Check deines Ads-Kontos</li>
+        <li>Kurze Einschätzung zum Abschluss</li>
+      </ul>
+      <p class="spots">Buchung bis <b>31.12.2026</b> · Termine ab Jänner 2027</p>
+    </aside>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="wrap">
+    <p class="eyebrow">Warum gerade jetzt</p>
+    <h2>Gäste suchen anders als früher</h2>
+    <p class="intro">Viele Gäste googeln weiterhin – und immer öfter steht eine KI-Antwort ganz oben. Wer dann nicht sichtbar ist, wird schlicht nicht angeklickt.</p>
+    <div class="grid3">
+      <div class="card">
+        <p class="stat">46 %</p>
+        <h3>nennen Google als Hauptquelle</h3>
+        <p>Google ist in Österreich weiter die wichtigste Anlaufstelle für Informationen.</p>
+        <p class="source">WPP Media Österreich, Juli 2026, 1.032 Befragte (18–65)</p>
+      </div>
+      <div class="card">
+        <p class="stat">15 → 8 %</p>
+        <h3>weniger Klicks mit KI-Antwort</h3>
+        <p>Steht eine „Übersicht mit KI“ oben, klicken Menschen fast halb so oft auf einen Link.</p>
+        <p class="source">Pew Research Center, USA, März 2025</p>
+      </div>
+      <div class="card">
+        <p class="stat">Ads</p>
+        <h3>laufen über &amp; unter der KI-Antwort</h3>
+        <p>Anzeigen erscheinen in Österreich schon heute über und unter der Übersicht mit KI – mit bestehenden Kampagnen.</p>
+        <p class="source">Google-Ads-Hilfe</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABLAUF -->
+<section class="agenda" id="ablauf">
+  <div class="wrap">
+    <p class="eyebrow">Der Ablauf</p>
+    <h2>20 Minuten. Klar strukturiert.</h2>
+    <p class="intro">Kein Verkaufsgespräch mit offenem Ende: Wir halten uns an ein fixes Programm von 20 Minuten.</p>
+    <div class="timeline">
+      <div class="step"><div><h3>Kurz kennenlernen</h3><p>Was ist dir wichtig: Tische füllen, Catering, Feiern, Zimmer?</p></div></div>
+      <div class="step"><div><h3>Live-Suche wie ein Gast</h3><p>Wir googeln gemeinsam z. B. „Gasthaus [dein Ort]“: Wer schaltet bei diesen Suchen bereits Anzeigen?</p></div></div>
+      <div class="step"><div><h3>5-Punkte-Check deiner Google Ads</h3><p>Wird gemessen, ob Anrufe &amp; Reservierungen kommen? Wofür zahlst du? Wirbst du im richtigen Gebiet? Ist dein Unternehmensprofil verknüpft und kann man dich direkt aus der Anzeige anrufen? Passt das Budget? <br><span class="small">Noch kein Konto? Dann schauen wir, wonach in deiner Gegend gesucht wird.</span></p></div></div>
+      <div class="step"><div><h3>Kurze Einschätzung</h3><p>Zum Schluss fasse ich zusammen, was mir aufgefallen ist – und du entscheidest, ob und wie du weitermachen willst.</p></div></div>
+    </div>
+    <div class="note"><b>Ganz entspannt:</b> Im Live-Check schauen wir uns gemeinsam an, wie es aktuell aussieht. Wenn du danach tiefer einsteigen möchtest, findest du unten schon einen Einblick in weitere Analysen und Pakete – ganz unverbindlich.</div>
+  </div>
+</section>
+
+<!-- PAKETE -->
+<section class="pakete" id="pakete">
+  <div class="wrap">
+    <p class="eyebrow">Messepreise</p>
+    <h2>Drei Schritte – du entscheidest</h2>
+    <p class="intro">Starte gratis. Wenn du mehr willst, geht's Schritt für Schritt weiter – <b>Messepreis bei Buchung bis 31.12.2026 – Start ab Jänner 2027.</b></p>
+    <div class="tiers">
+
+      <div class="tier featured">
+        <span class="tag">Gratis</span>
+        <h3>Live-Check</h3>
+        <p class="for">Für alle, die wissen wollen, wo sie stehen.</p>
+        <p class="p">Gratis</p>
+        <p class="pnote">nur für die ersten 10 Betriebe · Termine ab Jänner 2027</p>
+        <ul>
+          <li>20 Min. per Video-Call</li>
+          <li>Live-Suche: Wer wirbt schon?</li>
+          <li>5-Punkte-Check im Ads-Konto</li>
+          <li>Kurze Einschätzung zum Abschluss</li>
+          <li class="no">Keine Umsetzung im Konto</li>
+        </ul>
+        <a class="btn" href="#termin">Termin sichern</a>
+      </div>
+
+      <div class="tier">
+        <h3>Potenzial-Analyse</h3>
+        <p class="for"><b>Lohnt sich Google Ads für dich?</b> Für alle, die das vor dem Start wissen wollen.</p>
+        <p class="p">240 €</p>
+        <p class="pnote">Messe-Einführungspreis · wird bei Buchung des Startpakets innerhalb von 3 Monaten voll angerechnet</p>
+        <ul>
+          <li>Wird in deiner Gegend nach deinem Angebot gesucht? Suchvolumen der wichtigsten Begriffe</li>
+          <li>Was kostet ein Klick ungefähr? (Schätzung von Google)</li>
+          <li>Welche Mitbewerber werben bereits?</li>
+          <li>Budget-Rahmen &amp; Empfehlung – schriftlich + Gespräch</li>
+          <li class="no">Ausführliche Keyword-Recherche – im Startpaket</li>
+        </ul>
+        <a class="btn btn-ghost" href="#termin">Anfragen</a>
+      </div>
+
+      <div class="tier">
+        <h3>Startpaket</h3>
+        <p class="for">Für alle, die direkt loslegen wollen.</p>
+        <p class="p">−15 %</p>
+        <p class="pnote">Messe-Rabatt auf dein individuelles Angebot · Umfang nach Bedarf, zzgl. Werbebudget an Google</p>
+        <ul>
+          <li>Kampagnen passend zu deinem Betrieb – welche Art und wie viele, klären wir gemeinsam</li>
+          <li>Ausführliche Keyword-Recherche &amp; Anzeigentexte für deine Angebote (z. B. Restaurant, Catering, Feiern)</li>
+          <li>Messung von Anrufen &amp; Reservierungen*</li>
+          <li>Verknüpfung mit deinem Unternehmensprofil &amp; Anruf-Erweiterung</li>
+          <li>Laufende Betreuung &amp; Optimierung in der Startphase</li>
+          <li class="no">Banner, Bilder &amp; Videos – auf Anfrage gegen Mehraufwand</li>
+        </ul>
+        <a class="btn btn-ghost" href="#termin">Anfragen</a>
+      </div>
+
+    </div>
+    <p class="small" style="margin-top:22px">* soweit die Website das technisch zulässt. Alle Preise exkl. USt. Das Werbebudget bezahlst du direkt an Google – es ist in keinem Paket enthalten.</p>
+  </div>
+</section>
+
+<!-- ÜBER MICH -->
+<section class="about">
+  <div class="wrap">
+    <img class="about-photo" src="daniela.jpg" alt="Daniela Weger, Google-Ads-Managerin bei easyAds" loading="lazy">
+    <div>
+      <p class="eyebrow">Wer dich berät</p>
+      <h2>Hi, ich bin Daniela</h2>
+      <p>Ich bin Google-Ads-Managerin und betreue mit easyAds Betriebe, die genau dort sichtbar sein wollen, wo ihre Gäste suchen. Kein Fachchinesisch, keine langen Verträge – sondern klare Empfehlungen, die du verstehst. Alles easy. ;-)</p>
+      <div class="certs">
+        <span>Google Ads: Suchmaschinenwerbung</span>
+        <span>Displaywerbung</span>
+        <span>Videowerbung</span>
+        <span>Shopping-Anzeigen</span>
+        <span>Google Analytics</span>
+      </div>
+      <p class="small" style="margin-top:10px">Zertifizierungen lt. easy-ads.at – bitte vor Veröffentlichung auf Aktualität prüfen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <p class="eyebrow">Häufige Fragen</p>
+    <h2>Gut zu wissen</h2>
+    <details><summary>Ist der Live-Check wirklich gratis?</summary><p>Ja. Für die ersten 10 Betriebe, die bis 31.12.2026 buchen, kostet der 20-Minuten-Live-Check nichts und verpflichtet dich zu nichts.</p></details>
+    <details><summary>Warum starten wir erst im Jänner?</summary><p>Damit ich mir für jeden Betrieb die Zeit nehmen kann, die er braucht. Du sicherst dir jetzt den Messepreis – und wir starten gemeinsam ins neue Jahr.</p></details>
+    <details><summary>Ich habe noch gar keine Google Ads. Bringt mir das was?</summary><p>Ja. Dann schauen wir live, wer in deiner Gegend schon Anzeigen schaltet und wonach Gäste suchen.</p></details>
+    <details><summary>Was muss ich vorbereiten?</summary><p>Nichts. Wenn du ein Google-Ads-Konto hast, teilst du im Termin einfach deinen Bildschirm – oder gibst mir vorab Lesezugriff.</p></details>
+    <details><summary>Ist das Werbebudget im Preis enthalten?</summary><p>Nein. Das Werbebudget bezahlst du immer direkt an Google. Du bestimmst selbst, wie hoch es ist. In den Paketen ist nur meine Arbeit enthalten.</p></details>
+    <details><summary>Garantierst du mehr Reservierungen?</summary><p>Nein – und wer das garantiert, sollte dich stutzig machen. Wo und zu welchem Preis Anzeigen erscheinen, entscheidet Google in einer Auktion. Was ich dir versprechen kann: saubere Einrichtung, klare Messung und ehrliche Empfehlungen.</p></details>
+    <details><summary>Gibt es schon Werbung direkt in der KI-Suche von Google?</summary><p>Im „KI-Modus“ gibt es Anzeigen bereits in den USA und seit Oktober 2026 in weiteren Ländern – für Österreich hat Google noch keinen Termin genannt. In Österreich laufen Anzeigen aber schon heute über und unter der „Übersicht mit KI“.</p></details>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="form-sec" id="termin">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Nur 10 Termine</p>
+      <h2>Sicher dir deinen Gratis-Live-Check</h2>
+      <p class="intro">Messepreis bei Buchung bis 31.12.2026 – Start ab Jänner 2027.</p>
+      <ul class="trust">
+        <li>20 Minuten, fixes Programm</li>
+        <li>Keine Vorbereitung nötig</li>
+        <li>Unverbindlich – kein Abo, keine Verpflichtung</li>
+      </ul>
+    </div>
+    <div class="cta-box">
+      <p>Schreib mir kurz, für welches Paket du dich interessierst – ich melde mich mit Terminvorschlägen ab Jänner 2027.</p>
+      <a class="btn" href="https://easy-ads.at/kontakt-1">Jetzt Termin anfragen</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© easyAds Onlineprofi · Daniela Weger</span>
+    <span><a href="https://easy-ads.at">easy-ads.at</a><a href="https://easy-ads.at/impressum">Impressum</a><a href="https://easy-ads.at/datenschutz">Datenschutz</a></span>
+  </div>
+</footer>
+
+<div class="mobile-cta"><a class="btn" href="#termin">Gratis-Live-Check sichern</a></div>
+
+</body>
+</html>
